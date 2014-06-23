@@ -30,6 +30,10 @@
                 'selector'    : '.stream-grid',
                 'opacity'     : [0.5,1]
               }
+              // , {
+              //   'selector'    : '.nav-header',
+              //   'opacity'     : [0,1]
+              // }
             ]
           } , {
             'duration' : '100%',

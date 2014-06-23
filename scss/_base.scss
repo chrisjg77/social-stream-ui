@@ -1,6 +1,7 @@
 * {
   -webkit-font-smoothing: antialiased;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  @include box-sizing(border-box);
 }
 
 body {
@@ -10,4 +11,8 @@ body {
 
 em {
   font-style: normal;
+}
+
+strong {
+  font-weight: bold;
 }
