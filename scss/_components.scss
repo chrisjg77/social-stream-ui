@@ -1,15 +1,17 @@
-
-.app-title {
-  font-size: 1em;
-  color: #fff;
-}
-
 .nav-header {
   // background: #000;
-  height: 4em;
   width: 100%;
   position: fixed;
   z-index: 999;
+  padding: 0 10%;
+}
+
+.app-title {
+  padding: 1em 0;
+  font-family: "futura-pt";
+  text-transform: uppercase;
+  font-size: 1.1em;
+  color: #fff;
 }
 
 .featured {
@@ -19,6 +21,7 @@
   background: url('../img/van-persie-flying.jpg') no-repeat center 60%;
   background-size: 120% auto;
   z-index: 1;
+  // margin-top: 4em;
 }
 
 .stream {
@@ -60,7 +63,10 @@
   overflow: hidden;
   position: relative;
   line-height: 1.1;
-
+  @include border-top-radius(3px);
+  @include border-bottom-radius(3px);
+  @include border-left-radius(3px);
+  @include border-right-radius(3px);
   @include transition(all 0.275s);
 
   p {
@@ -70,7 +76,7 @@
     left: 0;
     padding: 1em;
 
-    display: none;
+    // display: none;
   }
   img {
     min-width: 100%;
