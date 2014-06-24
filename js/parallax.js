@@ -20,7 +20,7 @@
         currentKeyframe =          0,
         keyframes = [
           {
-            'duration' : '75%',
+            'duration' : '70%',
             'animations' :  [
               {
                 'selector'    : '.featured',
@@ -30,10 +30,6 @@
                 'selector'    : '.stream-grid',
                 'opacity'     : [0.5,1]
               }
-              // , {
-              //   'selector'    : '.nav-header',
-              //   'opacity'     : [0,1]
-              // }
             ]
           } , {
             'duration' : '100%',
