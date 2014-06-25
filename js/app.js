@@ -1,18 +1,17 @@
 $(function() {
 
-  setTimeout(function() {
-    $('body').fadeIn(500);
-  },450);
+  $('.stream').isotope({
+    itemSelector: '.stream-item'
+  })
 
-  setTimeout(function() {
-    $('.stream-grid-block').each(function(i) {
-      var self = $(this);
+  $('.stream-add').on('click',function() {
 
-      setTimeout(function() {
-        self.show().addClass('fadeIn');
-      },85*i);
-
-      // $(this).delay(85*i).animate({'opacity':1},300);
+    var scroll_to = $('.stream-add').offset().top - 100;
+    $('body,html').animate({'scrollTop':scroll_to},375,function() {
+      $('body').addClass('authoring');
     });
-  },750);
+
+  });
+
+
 });

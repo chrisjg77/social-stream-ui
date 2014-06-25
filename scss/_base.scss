@@ -5,9 +5,10 @@
 }
 
 body {
-  background: #000 !important;
+  // background: #eee;
+  background: #1b1b1b;
   padding-top: 0;
-  display: none;
+  min-height: 5000px;
 }
 
 em {
@@ -16,4 +17,15 @@ em {
 
 strong {
   font-weight: bold;
+}
+
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
 }
