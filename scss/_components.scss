@@ -37,6 +37,7 @@
 
   @media screen and (min-width: 500px) {
      @include columns(2);
+     @include columns(315px);
      @include column-gap(0);
   }
   @media screen and (min-width: 768px) {
@@ -50,8 +51,8 @@
 }
 
 .stream-grid-block {
-  width: 100%;
   display: inline-block;
+  width: 100%;
   padding: 0.20em;
   position: relative;
   line-height: 1.1;
@@ -62,12 +63,47 @@
     top: 0;
     left: 0;
     padding: 1em;
+    display: block;
   }
-  img {
-    min-width: 100%;
+}
+.stream-item-image {
+  min-width: 100%;
+}
+.stream-item-overlay {
+  width: 98.5%;
+  height: 98.5%;
+  position: absolute;
+  z-index: 0;
+}
+.overlay-black {
+  background: rgba(0,0,0,0.5);
+}
+.overlay-pink {
+  background: rgba(235,95,205,0.5);
+}
+
+.stream-item-meta {
+  color: #fff;
+  padding: 0.5em;
+
+  div {
+    display: inline-block;
   }
 }
 
-.highlight {
-  @include column-span(2);
+
+
+.meta-interactions {
+  float: right;
+
+  a {
+    color: #fff;
+    margin-left: 0.5em;
+    font-size: 0.873em;
+  }
+
+  .oi {
+    font-size: 1em;
+    padding-right: 0.2em;
+  }
 }

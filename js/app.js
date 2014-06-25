@@ -1,9 +1,18 @@
 $(function() {
 
-  // $('.stream-grid-block').on('mouseover',function() {
-  //   var h = $(this).height();
-  //   $('.stream-grid-block').css('height','auto');
-  //   $(this).css('height',h+50);
-  // });
+  setTimeout(function() {
+    $('body').fadeIn(500);
+  },450);
 
+  setTimeout(function() {
+    $('.stream-grid-block').each(function(i) {
+      var self = $(this);
+
+      setTimeout(function() {
+        self.show().addClass('fadeIn');
+      },85*i);
+
+      // $(this).delay(85*i).animate({'opacity':1},300);
+    });
+  },750);
 });
