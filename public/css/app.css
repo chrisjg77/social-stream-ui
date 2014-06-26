@@ -291,10 +291,13 @@ strong {
   -ms-transition: all 1s;
   -o-transition: all 1s;
 }
-.toolbar-list li a.active,
-.toolbar-list li a:hover {
+.list-nav a.active,
+.list-nav a:hover {
   opacity: 1;
   border-bottom: 2px solid #DC85D7;
+}
+.list-progress a.complete {
+  opacity: 1;
 }
 .step-number {
   display: inline-block;
@@ -305,7 +308,7 @@ strong {
   width: 1.4em;
   text-align: center;
   line-height: 1.4;
-  margin-bottom: -0.4em;
+  margin-bottom: -0.45em;
   margin-right: 0.5em;
   background: rgba(255, 255, 255, 0.5);
   -webkit-border-radius: 50%;
@@ -314,6 +317,10 @@ strong {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+}
+.progress-meter {
+  border-bottom: 2px solid #DC85D7;
+  width: 170px;
 }
 .break-left {
   float: left;
@@ -409,6 +416,15 @@ strong {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+  -webkit-transition: all 0.275s;
+  -moz-transition: all 0.275s;
+  -ms-transition: all 0.275s;
+  -o-transition: all 0.275s;
+}
+.btn:hover,
+.btn:focus,
+.btn:active {
+  border: 1px solid #DC85D7;
 }
 @charset "UTF-8";
 /*!

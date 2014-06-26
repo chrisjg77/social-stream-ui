@@ -3,21 +3,18 @@ define(function (require) {
     , Marionette = require('marionette')
     , conf = require('conf')
     , _ = require('underscore')
+    , PreviewView = require('views/editor/preview')
     ;
 
-  var EditorView = Marionette.ItemView.extend({
+  var EditorView = Marionette.LayoutView.extend({
     className: 'editor clearfix',
     template: require('hbs!editor'),
 
     // Load configuration file.
     templateHelpers: {'conf':conf},
 
-    ui: {
-      header: 'h1'
-    },
-
-    events: {
-      // ...
+    regions: {
+      preview: '[data-region=editor-preview]'
     },
 
     initialize: function (options) {
@@ -26,7 +23,8 @@ define(function (require) {
       app.on('editor:close', this.closeEditor);
     },
 
-    onDomRefresh: function() {
+    onRender: function() {
+      app.preview.show(new PreviewView());
     },
 
     openEditor: function() {

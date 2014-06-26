@@ -50,14 +50,22 @@
       opacity: 0.7;
       .transition(all 1s);
     }
-
-    a.active,
-    a:hover {
-      opacity: 1;
-      border-bottom: 2px solid #DC85D7;
-    }
   }
 }
+.list-nav {
+  a.active,
+  a:hover {
+    opacity: 1;
+    border-bottom: 2px solid #DC85D7;
+  }
+}
+
+.list-progress {
+  a.complete {
+    opacity: 1;
+  }
+}
+
 .step-number {
   display: inline-block;
   position: relative;
@@ -67,10 +75,15 @@
   width: 1.4em;
   text-align: center;
   line-height: 1.4;
-  margin-bottom: -0.4em;
+  margin-bottom: -0.45em;
   margin-right: 0.5em;
   background: rgba(255,255,255,0.5);
   .border-radius(50%);
+}
+
+.progress-meter {
+  border-bottom: 2px solid #DC85D7;
+  width: 170px;
 }
 
 .break-left {
@@ -162,4 +175,10 @@
   padding: 0.5em 1.5em;
   .box-shadow(none);
   .border-radius(25px);
+  .transition(all 0.275s);
+}
+.btn:hover,
+.btn:focus,
+.btn:active {
+  border: 1px solid #DC85D7;
 }
