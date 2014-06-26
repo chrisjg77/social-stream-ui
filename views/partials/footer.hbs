@@ -1,0 +1,24 @@
+  <!-- Load Scripts -->
+  {{#each conf.scripts}}
+  <script src="{{path}}" type="text/javascript"></script>
+  {{/each}}
+  <!-- Marionette Application. -->
+  <script>
+    // Allow easy access to JSON.stringify()'d data.
+    {{#each json}}
+      define('{{@key}}', function (require) {
+        return {{{this}}};
+      });
+    {{/each}}
+
+    define('conf', function(require) {
+      return {{{stringify conf}}};
+    })
+    // Start the app.
+    require(['apps/app_name'], function (app) {
+      app.start();
+    });
+  </script>
+
+  </body>
+</html>

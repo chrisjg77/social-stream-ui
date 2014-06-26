@@ -1,0 +1,165 @@
+
+.featured {
+  max-height: 700px;
+  // background: url('../img/van-persie-flying.jpg') no-repeat center center;
+  // background-size: cover;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    margin-top: -15%;
+  }
+}
+
+.actions-background {
+  height: 5em;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  border-top: 1px solid #424242;
+  border-bottom: 1px solid #424242;
+}
+.actions-background-inner {
+  width: 105%;
+  height: 105%;
+  background: url('../img/van-persie-flying-blurred.jpg') no-repeat center bottom;
+  background-size: 100% auto;
+  .filter(brightness(0.3));
+}
+.actions {
+  width: 100%;
+  min-height: 5em;
+  margin-top: -4.95em;
+}
+.toolbar {
+  padding-top: 0.9em;
+}
+.toolbar-list {
+  li {
+    font-size: 1.27em;
+    display: inline-block;
+    padding: 0 1.5em 0 0;
+
+    a {
+      color: #fff;
+      display: block;
+      text-decoration: none;
+      padding: 0.7em 0 1.35em;
+      opacity: 0.7;
+      .transition(all 1s);
+    }
+
+    a.active,
+    a:hover {
+      opacity: 1;
+      border-bottom: 2px solid #DC85D7;
+    }
+  }
+}
+.step-number {
+  display: inline-block;
+  position: relative;
+  color: #1b1b1b;
+  font-size: 0.83em;
+  height: 1.4em;
+  width: 1.4em;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: -0.4em;
+  margin-right: 0.5em;
+  background: rgba(255,255,255,0.5);
+  .border-radius(50%);
+}
+
+.break-left {
+  float: left;
+}
+.break-right {
+  float: right;
+}
+
+.editor {
+  width: 100%;
+  height: 0;
+
+  .transition(height 0.375s);
+}
+
+.wrapper-section {
+  margin: 0 auto;
+  width: 1020px;
+  @media screen and (min-width: 1024px) {
+    width: (300px+10)*3;
+  }
+  @media screen and (min-width: 1279px) {
+    width: (300px+10)*4;
+  }
+  @media screen and (min-width: 1560px) {
+    width: (300px+10)*5;
+  }
+}
+
+.stream {
+  position: relative;
+  padding-top: 4em;
+}
+
+.stream-item {
+  background: #fff;
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+  display: inline-block;
+  overflow: hidden;
+  .box-shadow(0 0 4px rgba(0,0,0,0.25));
+  .transition(all 0.375s);
+
+  img {
+    width: auto;
+    min-width: 100%;
+    height: 105%;
+  }
+}
+.stream-item-image {
+  position: relative;
+  z-index: 9;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+
+  img {
+    height: 105%;
+  }
+}
+.stream-item-meta {
+  position: relative;
+  z-index: 8;
+  height: 4em;
+  background: lighten(#2a2a2a,5%);
+}
+
+.editing {
+  // .featured {
+  //   opacity: 0.5;
+  //   .filter(blur(5px));
+  // }
+  .editor {
+    height: 650px;
+  }
+  .stream-item {
+    opacity: 0.7;
+    // .filter(blur(10px) brightness(0.5));
+  }
+}
+
+.btn {
+  background: none;
+  color: #fff;
+  font-size: 1em;
+  margin: 0.35em 0;
+  border: 1px solid #fff;
+  cursor: pointer;
+  padding: 0.5em 1.5em;
+  .box-shadow(none);
+  .border-radius(25px);
+}

@@ -1,0 +1,82 @@
+
+.featured {
+  height: 700px;
+  background: url('../img/van-persie-flying.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.actions {
+  width: 100%;
+  min-height: 4em;
+  padding: 4em 0;
+}
+
+.actions-user {
+  float: right;
+}
+
+.editor {
+  width: 100%;
+  height: 0;
+
+  @include transition(height 0.375s);
+
+}
+
+.wrapper-section {
+  margin: 0 auto;
+  width: 1020px;
+  @media screen and (min-width: 1281px) {
+     width: 1280px;
+  }
+}
+
+.stream {
+  position: relative;
+}
+
+.stream-item {
+  background: #fff;
+  width: 310px;
+  height: 310px;
+  margin: 5px;
+  display: inline-block;
+  overflow: hidden;
+  @include box-shadow(0 0 4px rgba(0,0,0,0.25));
+  @include transition(all 0.375s);
+
+  img {
+    width: auto;
+    min-width: 100%;
+    height: 101%;
+  }
+}
+.stream-item-image {
+  position: relative;
+  z-index: 9;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+.stream-item-meta {
+  position: relative;
+  z-index: 8;
+  height: 4em;
+  background: lighten(#2a2a2a,5%);
+}
+
+.editing {
+
+  .featured {
+    opacity: 0.5;
+    @include filter(blur(5px));
+  }
+
+  .editor {
+    height: 600px;
+  }
+
+  .stream-item {
+    opacity: 0.7;
+    @include filter(blur(10px) brightness(0.5));
+  }
+
+}

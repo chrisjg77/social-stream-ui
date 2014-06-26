@@ -4,11 +4,12 @@ $(function() {
     itemSelector: '.stream-item'
   })
 
-  $('.stream-add').on('click',function() {
+  $('#add-thing').on('click',function() {
 
-    var scroll_to = $('.stream-add').offset().top - 100;
+    var scroll_to = $('.featured').height();
+
     $('body,html').animate({'scrollTop':scroll_to},375,function() {
-      $('body').addClass('authoring');
+      $('body').addClass('editing');
     });
 
   });
