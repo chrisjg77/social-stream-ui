@@ -420,35 +420,45 @@ h4 {
   color: #fff;
   font-weight: 600;
 }
+.editor-preview {
+  position: relative;
+  padding: 0.5em;
+  border: 4px solid #b4b4b4;
+}
 .tools-filters {
   width: 100%;
-  margin-bottom: 1em;
+  padding-left: 1em;
 }
 .filters-list li {
   width: 6em;
   height: 6em;
   overflow: hidden;
   display: inline-block;
-  margin-right: 0.5em;
+  margin: 0 1em 0.5em 0;
 }
 .filters-list li img {
   width: 130%;
   margin-left: -15%;
 }
-.tools-preview {
+.item-image {
   background: #4e4e4e;
   width: 510px;
   height: 510px;
   overflow: hidden;
 }
-.tools-preview img {
+.item-image img {
   width: 130%;
   margin-left: -15%;
 }
-.tools-text {
-  position: relative;
+.item-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
 }
-.tools-text textarea {
+.item-text textarea {
   color: #fff;
   width: 510px;
   padding: 10%;
@@ -457,7 +467,8 @@ h4 {
   border: none;
   resize: none;
   text-align: center;
-  font-size: 3.2em;
+  font-size: 7.7em;
+  line-height: 1;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -3432,8 +3443,29 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   -webkit-animation-name: zoomOutUp;
   animation-name: zoomOutUp;
 }
-.sophisticated {
+.filter-sophisticated * {
   font-family: 'league gothic', sans;
   text-transform: uppercase;
+}
+.filter-sophisticated .item-text::before {
+  display: block;
+  border-top: 1px solid #fff;
+  width: 50%;
+  content: "";
+  margin: 10% 25%;
+}
+.filter-sophisticated .item-text::after {
+  display: block;
+  border-top: 1px solid #fff;
+  width: 50%;
+  content: "";
+  margin: 10% 25%;
+  position: absolute;
+  bottom: 0;
+}
+.filter-sophisticated img {
+  -webkit-filter: brightness(0.6);
+  -moz-filter: brightness(0.6);
+  filter: brightness(0.6);
 }
 /*# sourceMappingURL=/css/app.css.map */

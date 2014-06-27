@@ -1,4 +1,25 @@
-.sophisticated {
-  font-family: 'league gothic', sans;
-  text-transform: uppercase;
+.filter-sophisticated {
+  * {
+    font-family: 'league gothic', sans;
+    text-transform: uppercase;
+  }
+  .item-text::before {
+    display: block;
+    border-top: 1px solid #fff;
+    width: 50%;
+    content: "";
+    margin: 10% 25%;
+  }
+  .item-text::after {
+    display: block;
+    border-top: 1px solid #fff;
+    width: 50%;
+    content: "";
+    margin: 10% 25%;
+    position: absolute;
+    bottom: 0;
+  }
+  img {
+    .filter(brightness(0.6));
+  }
 }
