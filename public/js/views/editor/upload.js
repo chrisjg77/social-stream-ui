@@ -25,7 +25,6 @@ define(function (require) {
     },
 
     uploadFile: function () {
-      console.log('upload');
       app.trigger('editor:showTools');
     },
 

@@ -10,7 +10,27 @@ define(function (require) {
     template: require('hbs!editor/tools'),
 
     // Load configuration file.
-    templateHelpers: {'conf':conf}
+    templateHelpers: {'conf':conf},
+
+    ui: {
+      filterOption: '.filters-list li',
+      itemPreview: '.editor-preview'
+    },
+
+    events: {
+      'click @ui.filterOption': 'applyFilter'
+    },
+
+    applyFilter: function(e) {
+      var $el = $(e.currentTarget);
+      var filter = $el.attr('data-filter');
+
+      this.ui.filterOption.removeClass('filter-selected');
+      $el.addClass('filter-selected');
+
+      this.ui.itemPreview.attr('data-filter',filter);
+
+    }
 
   });
 

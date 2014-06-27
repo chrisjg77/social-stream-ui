@@ -422,23 +422,51 @@ h4 {
 }
 .editor-preview {
   position: relative;
-  padding: 0.5em;
-  border: 4px solid #b4b4b4;
+  border: 4px solid #4e4e4e;
+}
+.editor-preview * {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
 }
 .tools-filters {
   width: 100%;
   padding-left: 1em;
 }
+.filters-list {
+  text-align: center;
+}
 .filters-list li {
-  width: 6em;
-  height: 6em;
-  overflow: hidden;
   display: inline-block;
   margin: 0 1em 0.5em 0;
+  border: 2px solid #4e4e4e;
+  cursor: pointer;
 }
-.filters-list li img {
+.filter-preview {
+  width: 7em;
+  height: 7em;
+  overflow: hidden;
+  position: relative;
+}
+.filter-preview img {
   width: 130%;
   margin-left: -15%;
+}
+.filter-preview .item-text p {
+  font-size: 3.7em;
+}
+.filter-label {
+  text-align: center;
+  padding: 0.5em 0;
+  border-top: 2px solid #4e4e4e;
+  -webkit-transition: background 0.275s;
+  -moz-transition: background 0.275s;
+  -ms-transition: background 0.275s;
+  -o-transition: background 0.275s;
+}
+.filter-selected .filter-label {
+  background: #4e4e4e;
 }
 .item-image {
   background: #4e4e4e;
@@ -458,10 +486,12 @@ h4 {
   width: 100%;
   height: 100%;
 }
+.item-text p,
 .item-text textarea {
+  z-index: 9;
   color: #fff;
-  width: 510px;
-  padding: 10%;
+  width: 90%;
+  padding: 5%;
   display: block;
   background: none;
   border: none;
@@ -3443,18 +3473,19 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   -webkit-animation-name: zoomOutUp;
   animation-name: zoomOutUp;
 }
-.filter-sophisticated * {
-  font-family: 'league gothic', sans;
+[data-filter='sophisticated'] .item-text,
+[data-filter='sophisticated'] .item-text * {
+  font-family: 'league gothic', sans-serif;
   text-transform: uppercase;
 }
-.filter-sophisticated .item-text::before {
+[data-filter='sophisticated'] .item-text::before {
   display: block;
   border-top: 1px solid #fff;
   width: 50%;
   content: "";
   margin: 10% 25%;
 }
-.filter-sophisticated .item-text::after {
+[data-filter='sophisticated'] .item-text::after {
   display: block;
   border-top: 1px solid #fff;
   width: 50%;
@@ -3463,9 +3494,49 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   position: absolute;
   bottom: 0;
 }
-.filter-sophisticated img {
+[data-filter='sophisticated'] img {
   -webkit-filter: brightness(0.6);
   -moz-filter: brightness(0.6);
   filter: brightness(0.6);
+}
+[data-filter='trendy'] .item-text,
+[data-filter='trendy'] .item-text * {
+  color: #FFF900;
+  font-family: 'league gothic', sans-serif;
+  text-transform: uppercase;
+}
+[data-filter='trendy'] .item-text::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: rgba(238, 88, 255, 0.5);
+  position: absolute;
+  -webkit-background-blend-mode: multiply;
+}
+[data-filter='trendy'] img {
+  -webkit-filter: brightness(0.9) contrast(1.7);
+  -moz-filter: brightness(0.9) contrast(1.7);
+  filter: brightness(0.9) contrast(1.7);
+}
+[data-filter='vintage'] .item-text,
+[data-filter='vintage'] .item-text * {
+  color: #fff;
+  font-family: 'lust script', serif;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+[data-filter='vintage'] .item-text::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: rgba(157, 157, 134, 0.3);
+  position: absolute;
+  -webkit-background-blend-mode: hard-light;
+}
+[data-filter='vintage'] img {
+  -webkit-filter: brightness(0.9) contrast(1.7) saturate(0.2);
+  -moz-filter: brightness(0.9) contrast(1.7) saturate(0.2);
+  filter: brightness(0.9) contrast(1.7) saturate(0.2);
 }
 /*# sourceMappingURL=/css/app.css.map */

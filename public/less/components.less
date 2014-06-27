@@ -168,8 +168,11 @@
 
 .editor-preview {
   position: relative;
-  padding: 0.5em;
-  border: 4px solid @auto_light;
+  border: 4px solid @auto_dark;
+
+  * {
+    .transition(all 1s);
+  }
 }
 
 .tools-filters {
@@ -178,19 +181,42 @@
 }
 
 .filters-list {
+  text-align: center;
+
   li {
-    width: 6em;
-    height: 6em;
-    overflow: hidden;
     display: inline-block;
     margin: 0 1em 0.5em 0;
-
-    img {
-      width: 130%;
-      margin-left: -15%;
-    }
+    border: 2px solid @auto_dark;
+    cursor: pointer;
   }
 }
+.filter-preview {
+  width: 7em;
+  height: 7em;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 130%;
+    margin-left: -15%;
+  }
+
+  .item-text p {
+    font-size: 3.7em;
+  }
+}
+.filter-label {
+  text-align: center;
+  padding: 0.5em 0;
+  border-top: 2px solid @auto_dark;
+  .transition(background 0.275s);
+}
+.filter-selected {
+  .filter-label {
+    background: @auto_dark;
+  }
+}
+
 
 .item-image {
   background: @auto_dark;
@@ -212,10 +238,13 @@
   width: 100%;
   height: 100%;
 
+  p,
   textarea {
+    position: absolute;
+    z-index: 9;
     color: #fff;
-    width: 510px;
-    padding: 10%;
+    width: 90%;
+    padding: 5%;
     display: block;
     background: none;
     border: none;

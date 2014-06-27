@@ -1,6 +1,7 @@
-.filter-sophisticated {
-  * {
-    font-family: 'league gothic', sans;
+[data-filter='sophisticated'] {
+  .item-text,
+  .item-text * {
+    font-family: 'league gothic', sans-serif;
     text-transform: uppercase;
   }
   .item-text::before {
@@ -21,5 +22,51 @@
   }
   img {
     .filter(brightness(0.6));
+  }
+}
+
+[data-filter='trendy'] {
+  .item-text,
+  .item-text * {
+    color: #FFF900;
+    font-family: 'league gothic', sans-serif;
+    text-transform: uppercase;
+  }
+
+  .item-text::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: rgba(238,88,255,0.5);
+    position: absolute;
+    -webkit-background-blend-mode: multiply;
+  }
+
+  img {
+    .filter(brightness(0.9) contrast(1.7));
+  }
+}
+
+[data-filter='vintage'] {
+  .item-text,
+  .item-text * {
+    color: #fff;
+    font-family: 'lust script', serif;
+    text-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+
+  .item-text::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: rgba(157,157,134,0.3);
+    position: absolute;
+    -webkit-background-blend-mode: hard-light;
+  }
+
+  img {
+    .filter(brightness(0.9) contrast(1.7) saturate(0.2));
   }
 }

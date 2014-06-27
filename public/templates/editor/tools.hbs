@@ -1,9 +1,8 @@
-
 <div class="table">
 
-  <div class="editor-preview table-cell animated fadeInLeft filter-sophisticated">
+  <div class="editor-preview table-cell animated fadeInLeft" data-filter="sophisticated">
     <div class="item-text">
-        <textarea placeholder="Text here."></textarea>
+        <textarea>Text Here</textarea>
       </div>
     <div class="item-image">
       <img src="/img/ski.jpg" />
@@ -12,14 +11,34 @@
 
   <div class="tools-filters table-cell animated fadeInRight">
     <ul class="filters-list">
-      <li><img src="/img/ski.jpg" /></li>
-      <li><img src="/img/ski.jpg" /></li>
-      <li><img src="/img/ski.jpg" /></li>
-      <li><img src="/img/ski.jpg" /></li>
-      <li><img src="/img/ski.jpg" /></li>
-      <li><img src="/img/ski.jpg" /></li>
-      <li><img src="/img/ski.jpg" /></li>
-      <li><img src="/img/ski.jpg" /></li>
+      <li class="filter-selected" data-filter="sophisticated">
+        <div class="filter-preview">
+          <img src="/img/ski.jpg" />
+          <div class="item-text"><p>A</p></div>
+        </div>
+        <p class="filter-label">Sophisticated</p>
+      </li>
+      <li data-filter="trendy">
+        <div class="filter-preview">
+          <img src="/img/ski.jpg" />
+          <div class="item-text"><p>A</p></div>
+        </div>
+        <p class="filter-label">Trendy</p>
+      </li>
+      <li data-filter="vintage">
+        <div class="filter-preview">
+          <img src="/img/ski.jpg" />
+          <div class="item-text"><p>A</p></div>
+        </div>
+        <p class="filter-label">Vintage</p>
+      </li>
+      <li data-filter="hi-def">
+        <div class="filter-preview">
+          <img src="/img/ski.jpg" />
+          <div class="item-text"><p>A</p></div>
+        </div>
+        <p class="filter-label">Vintage</p>
+      </li>
     </ul>
   </div>
 </div>
