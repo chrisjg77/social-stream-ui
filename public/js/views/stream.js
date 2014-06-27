@@ -27,7 +27,7 @@ define(function (require) {
     },
 
     onDomRefresh: function() {
-      app.streamLayout.init();
+      // app.streamLayout.init();
     }
 
   });

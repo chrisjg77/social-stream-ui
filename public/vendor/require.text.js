@@ -339,7 +339,7 @@ define(['module'], function (module) {
                 //Make sure we return a JavaScript string and not a Java string.
                 content = String(stringBuffer.toString()); //String
             } finally {
-                input.close();
+                input.destroy();
             }
             callback(content);
         };
@@ -374,8 +374,8 @@ define(['module'], function (module) {
                 Ci.nsIConverterInputStream.DEFAULT_REPLACEMENT_CHARACTER);
 
                 convertStream.readString(inStream.available(), readData);
-                convertStream.close();
-                inStream.close();
+                convertStream.destroy();
+                inStream.destroy();
                 callback(readData.value);
             } catch (e) {
                 throw new Error((fileObj && fileObj.path || '') + ': ' + e);

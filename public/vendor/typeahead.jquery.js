@@ -753,12 +753,12 @@
                     this.$menu.scrollTop(menuScrollTop + (elBottom - menuHeight));
                 }
             },
-            close: function close() {
+            destroy: function.destroy() {
                 if (this.isOpen) {
                     this.isOpen = false;
                     this._removeCursor();
                     this._hide();
-                    this.trigger("closed");
+                    this.trigger("destroy");
                 }
             },
             open: function open() {
@@ -861,7 +861,7 @@
             this.dropdown = new Dropdown({
                 menu: $menu,
                 datasets: o.datasets
-            }).onSync("suggestionClicked", this._onSuggestionClicked, this).onSync("cursorMoved", this._onCursorMoved, this).onSync("cursorRemoved", this._onCursorRemoved, this).onSync("opened", this._onOpened, this).onSync("closed", this._onClosed, this).onAsync("datasetRendered", this._onDatasetRendered, this);
+            }).onSync("suggestionClicked", this._onSuggestionClicked, this).onSync("cursorMoved", this._onCursorMoved, this).onSync("cursorRemoved", this._onCursorRemoved, this).onSync("opened", this._onOpened, this).onSync("destroy", this._onDestroyd, this).onAsync("datasetRendered", this._onDatasetRendered, this);
             this.input = new Input({
                 input: $input,
                 hint: $hint
@@ -891,9 +891,9 @@
                 this._updateHint();
                 this.eventBus.trigger("opened");
             },
-            _onClosed: function onClosed() {
+            _onDestroyd: function onDestroyd() {
                 this.input.clearHint();
-                this.eventBus.trigger("closed");
+                this.eventBus.trigger("destroy");
             },
             _onFocused: function onFocused() {
                 this.isActivated = true;
@@ -902,7 +902,7 @@
             _onBlurred: function onBlurred() {
                 this.isActivated = false;
                 this.dropdown.empty();
-                this.dropdown.close();
+                this.dropdown.destroy();
             },
             _onEnterKeyed: function onEnterKeyed(type, $e) {
                 var cursorDatum, topSuggestionDatum;
@@ -926,7 +926,7 @@
                 }
             },
             _onEscKeyed: function onEscKeyed() {
-                this.dropdown.close();
+                this.dropdown.destroy();
                 this.input.resetInputValue();
             },
             _onUpKeyed: function onUpKeyed() {
@@ -993,14 +993,14 @@
                 this.input.setInputValue(datum.value, true);
                 this._setLanguageDirection();
                 this.eventBus.trigger("selected", datum.raw, datum.datasetName);
-                this.dropdown.close();
+                this.dropdown.destroy();
                 _.defer(_.bind(this.dropdown.empty, this.dropdown));
             },
             open: function open() {
                 this.dropdown.open();
             },
-            close: function close() {
-                this.dropdown.close();
+            destroy: function.destroy() {
+                this.dropdown.destroy();
             },
             setVal: function setVal(val) {
                 if (this.isActivated) {
@@ -1104,12 +1104,12 @@
                     }
                 }
             },
-            close: function close() {
-                return this.each(closeTypeahead);
-                function closeTypeahead() {
+            destroy: function.destroy() {
+                return this.each(destroyTypeahead);
+                function destroyTypeahead() {
                     var $input = $(this), typeahead;
                     if (typeahead = $input.data(typeaheadKey)) {
-                        typeahead.close();
+                        typeahead.destroy();
                     }
                 }
             },

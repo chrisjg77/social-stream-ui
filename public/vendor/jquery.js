@@ -2103,7 +2103,7 @@ function addCombinator( matcher, combinator, base ) {
     doneName = done++;
 
   return combinator.first ?
-    // Check against closest ancestor/preceding element
+    // Check against destroyst ancestor/preceding element
     function( elem, context, xml ) {
       while ( (elem = elem[ dir ]) ) {
         if ( elem.nodeType === 1 || checkNonElements ) {
@@ -2887,7 +2887,7 @@ jQuery.fn.extend({
     });
   },
 
-  closest: function( selectors, context ) {
+  destroyst: function( selectors, context ) {
     var cur,
       i = 0,
       l = this.length,
@@ -5274,7 +5274,7 @@ var nodeNames = "abbr|article|aside|audio|bdi|canvas|data|datalist|details|figca
   rscriptTypeMasked = /^true\/(.*)/,
   rcleanScript = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g,
 
-  // We have to close these tags to support XHTML (#13200)
+  // We have to destroy these tags to support XHTML (#13200)
   wrapMap = {
     option: [ 1, "<select multiple='multiple'>", "</select>" ],
     legend: [ 1, "<fieldset>", "</fieldset>" ],
@@ -6018,7 +6018,7 @@ function defaultDisplay( nodeName ) {
 
       // Support: IE
       doc.write();
-      doc.close();
+      doc.destroy();
 
       display = actualDisplay( nodeName, doc );
       iframe.detach();
@@ -8523,7 +8523,7 @@ jQuery.parseJSON = function( data ) {
 
   // Guard against invalid (and possibly dangerous) input by ensuring that nothing remains
   // after removing valid tokens
-  return str && !jQuery.trim( str.replace( rvalidtokens, function( token, comma, open, close ) {
+  return str && !jQuery.trim( str.replace( rvalidtokens, function( token, comma, open, destroy ) {
 
     // Force termination if we see a misplaced comma
     if ( requireNonComma && comma ) {
@@ -8540,9 +8540,9 @@ jQuery.parseJSON = function( data ) {
 
     // Determine new depth
     // array/object open ("[" or "{"): depth += true - false (increment)
-    // array/object close ("]" or "}"): depth += false - true (decrement)
+    // array/object destroy ("]" or "}"): depth += false - true (decrement)
     // other cases ("," or primitive): depth += true - true (numeric cast)
-    depth += !close - !open;
+    depth += !destroy - !open;
 
     // Remove this token
     return "";

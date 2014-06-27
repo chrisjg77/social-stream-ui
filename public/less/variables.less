@@ -17,20 +17,30 @@
 /*
  * Adaptable Settings
  **/
-@break_xs: 320px;
-@break_sm: 500px;
-@break_md: 768px;
-@break_lg: 1024px;
-@break_xl: 1280px;
-@break_xxl: 1440px;
+@break_xs: 319px;
+@break_sm: 499px;
+@break_md: 767px;
+@break_lg: 1023px;
+@break_xl: 1279px;
+@break_xxl: 1559px;
+
+@stream_item_size: 300px;
+@stream_item_gutter: 5px;
+
+@wrapper_sm: (@stream_item_size+(@stream_item_gutter*2));
+@wrapper_md: (@stream_item_size+(@stream_item_gutter*2))*2;
+@wrapper_lg: (@stream_item_size+(@stream_item_gutter*2))*3;
+@wrapper_xl: (@stream_item_size+(@stream_item_gutter*2))*4;
+@wrapper_xxl: (@stream_item_size+(@stream_item_gutter*2))*5;
 
 /*
  * Color Settings
  **/
-@auto: #2a2a2a;
-@auto_dark: @auto;
+@auto: #1b1b1b;
+@auto_dark: lighten(@auto,20%);
 @auto_medium: lighten(@auto,40%);
 @auto_light: lighten(@auto,60%);
 
-@accent: #50C57B;
+@accent: #DC85D7;
+@accent_dark: darken(@accent,5%);
 @accent_light: lighten(@accent,30%);

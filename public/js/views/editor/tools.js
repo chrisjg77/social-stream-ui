@@ -5,15 +5,15 @@ define(function (require) {
     , _ = require('underscore')
     ;
 
-  var PreviewView = Marionette.ItemView.extend({
-    className: 'preview clearfix',
-    template: require('hbs!preview'),
+  var ToolsView = Marionette.ItemView.extend({
+    className: 'editor-tools clearfix',
+    template: require('hbs!editor/tools'),
 
     // Load configuration file.
     templateHelpers: {'conf':conf}
 
   });
 
-  return PreviewView;
+  return ToolsView;
 
 });

@@ -1,8 +1,36 @@
+/**
+ * Formatting.
+ **********************************************************/
+.break-left {
+  float: left;
+}
+.break-right {
+  float: right;
+}
+.wrapper-section {
+  margin: 0 auto;
+  width: @wrapper_sm;
 
+  @media screen and (min-width: @break_md) {
+    width: @wrapper_md;
+  }
+  @media screen and (min-width: @break_lg) {
+    width: @wrapper_lg;
+  }
+  @media screen and (min-width: @break_xl) {
+    width: @wrapper_xl;
+  }
+  @media screen and (min-width: @break_xxl) {
+    width: @wrapper_xxl;
+  }
+}
+
+
+/**
+ * Featured Post.
+ **********************************************************/
 .featured {
   max-height: 700px;
-  // background: url('../img/van-persie-flying.jpg') no-repeat center center;
-  // background-size: cover;
   position: relative;
   overflow: hidden;
 
@@ -12,6 +40,9 @@
   }
 }
 
+/**
+ * App Actions Toolbar.
+ **********************************************************/
 .actions-background {
   height: 5em;
   width: 100%;
@@ -56,20 +87,18 @@
   a.active,
   a:hover {
     opacity: 1;
-    border-bottom: 2px solid #DC85D7;
+    border-bottom: 2px solid @accent;
   }
 }
-
 .list-progress {
   a.complete {
     opacity: 1;
   }
 }
-
 .step-number {
   display: inline-block;
   position: relative;
-  color: #1b1b1b;
+  color: @auto;
   font-size: 0.83em;
   height: 1.4em;
   width: 1.4em;
@@ -80,51 +109,112 @@
   background: rgba(255,255,255,0.5);
   .border-radius(50%);
 }
-
 .progress-meter {
-  border-bottom: 2px solid #DC85D7;
+  border-bottom: 2px solid @accent;
   width: 170px;
 }
 
-.break-left {
-  float: left;
-}
-.break-right {
-  float: right;
+/**
+ * Body in editing mode.
+ **********************************************************/
+.editing {
+  overflow: hidden;
+
+  .editor {
+    height: 650px;
+  }
+  .stream-item {
+    opacity: 0.3;
+  }
 }
 
+/**
+ * Editor.
+ **********************************************************/
 .editor {
   width: 100%;
   height: 0;
+  position: relative;
+  color: @auto_light;
+  margin-top: 4em;
+
+  > div {
+    width: 100%;
+    height: 100%;
+  }
 
   .transition(height 0.375s);
 }
+.editor-upload {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 6em;
+  border: 3px dashed @auto;
 
-.wrapper-section {
-  margin: 0 auto;
-  width: 1020px;
-  @media screen and (min-width: 1024px) {
-    width: (300px+10)*3;
-  }
-  @media screen and (min-width: 1279px) {
-    width: (300px+10)*4;
-  }
-  @media screen and (min-width: 1560px) {
-    width: (300px+10)*5;
+  .transition(border 0.275s);
+}
+
+.editor-upload:hover,
+.editor-upload.dragenter {
+  border: 3px dashed @auto_dark;
+}
+
+.step-header {
+  font-size: 2.3em;
+  color: #fff;
+  font-weight: 600;
+}
+
+.tools-filters {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.filters-list {
+  li {
+    width: 6em;
+    height: 6em;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 0.5em;
+
+    img {
+      width: 130%;
+      margin-left: -15%;
+    }
   }
 }
 
+.tools-preview {
+  background: @auto_dark;
+  width: @stream_item_size*1.7;
+  height: @stream_item_size*1.7;
+  overflow: hidden;
+
+  img {
+    width: 130%;
+    margin-left: -15%;
+  }
+}
+
+.tools-text {
+  background: @auto_dark;
+}
+
+/**
+ * Stream.
+ **********************************************************/
 .stream {
   position: relative;
   padding-top: 4em;
 }
-
 .stream-item {
   background: #fff;
-  width: 300px;
-  height: 300px;
+  width: @stream_item_size;
+  height: @stream_item_size;
+  float: left;
   margin: 5px;
-  display: inline-block;
   overflow: hidden;
   .box-shadow(0 0 4px rgba(0,0,0,0.25));
   .transition(all 0.375s);
@@ -151,25 +241,14 @@
   background: lighten(#2a2a2a,5%);
 }
 
-.editing {
-  // .featured {
-  //   opacity: 0.5;
-  //   .filter(blur(5px));
-  // }
-  .editor {
-    height: 650px;
-  }
-  .stream-item {
-    opacity: 0.7;
-    // .filter(blur(10px) brightness(0.5));
-  }
-}
-
+/**
+ * Buttons.
+ **********************************************************/
 .btn {
   background: none;
   color: #fff;
   font-size: 1em;
-  margin: 0.35em 0;
+  margin: 0.35em 0.2em;
   border: 1px solid #fff;
   cursor: pointer;
   padding: 0.5em 1.5em;
@@ -177,8 +256,19 @@
   .border-radius(25px);
   .transition(all 0.275s);
 }
+.btn-emphasis {
+  background: @accent_dark;
+  border: 1px solid @accent;
+}
+
 .btn:hover,
 .btn:focus,
 .btn:active {
-  border: 1px solid #DC85D7;
+  border: 1px solid @accent;
+}
+
+.btn-emphasis:hover,
+.btn-emphasis:focus,
+.btn-emphasis:active {
+  background: @accent;
 }

@@ -27,7 +27,7 @@
 }(this, function () {
 
 /**
- * Brings an environment as close to ECMAScript 5 compliance
+ * Brings an environment as destroy to ECMAScript 5 compliance
  * as is possible with the facilities of erstwhile engines.
  *
  * Annotated ES5: http://es5.github.com/ (specific links below)

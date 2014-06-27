@@ -3,7 +3,8 @@ define(function (require) {
     , Marionette = require('marionette')
     , conf = require('conf')
     , _ = require('underscore')
-    , PreviewView = require('views/editor/preview')
+    , UploadView = require('views/editor/upload')
+    , ToolsView = require('views/editor/tools')
     ;
 
   var EditorView = Marionette.LayoutView.extend({
@@ -14,25 +15,40 @@ define(function (require) {
     templateHelpers: {'conf':conf},
 
     regions: {
-      preview: '[data-region=editor-preview]'
+      editorArea: '[data-region=editor-area]'
     },
 
     initialize: function (options) {
       var self = this;
-      app.on('editor:open', this.openEditor);
-      app.on('editor:close', this.closeEditor);
-    },
 
-    onRender: function() {
-      app.preview.show(new PreviewView());
+      this.listenTo(app, 'editor:open', this.openEditor);
+      this.listenTo(app, 'editor:close', this.closeEditor);
+      this.listenTo(app, 'editor:showTools', this.showTools);
     },
 
     openEditor: function() {
+      var self = this;
       $('body').addClass('editing');
+      setTimeout(function() {
+        self.editorArea.show(new UploadView());
+      },275);
+    },
+
+    showTools: function() {
+      var self = this;
+      this.editorArea.destroy(new UploadView());
+      setTimeout(function() {
+        self.editorArea.show(new ToolsView());
+      },475);
     },
 
     closeEditor: function() {
-      $('body').removeClass('editing');
+      var self = this;
+      this.editorArea.destroy(new UploadView());
+
+      setTimeout(function() {
+        $('body').removeClass('editing');
+      },275);
     }
 
   });
