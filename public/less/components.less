@@ -168,7 +168,7 @@
 
 .tools-filters {
   width: 100%;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .filters-list {
@@ -199,7 +199,35 @@
 }
 
 .tools-text {
-  background: @auto_dark;
+  position: relative;
+
+  textarea {
+    color: #fff;
+    width: 510px;
+    padding: 10%;
+    // height: 510px;
+    display: block;
+    background: none;
+    border: none;
+    resize: none;
+    text-align: center;
+    font-size: 3.2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    outline: none;
+    .transform(translate3d(-50%,-50%,0));
+  }
+}
+
+.table {
+  display: table;
+  width: 100%;
+}
+
+.table-cell {
+  display: table-cell;
+  vertical-align: top;
 }
 
 /**

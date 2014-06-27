@@ -422,7 +422,7 @@ h4 {
 }
 .tools-filters {
   width: 100%;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 .filters-list li {
   width: 6em;
@@ -446,7 +446,34 @@ h4 {
   margin-left: -15%;
 }
 .tools-text {
-  background: #4e4e4e;
+  position: relative;
+}
+.tools-text textarea {
+  color: #fff;
+  width: 510px;
+  padding: 10%;
+  display: block;
+  background: none;
+  border: none;
+  resize: none;
+  text-align: center;
+  font-size: 3.2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  outline: none;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  -o-transform: translate3d(-50%, -50%, 0);
+}
+.table {
+  display: table;
+  width: 100%;
+}
+.table-cell {
+  display: table-cell;
+  vertical-align: top;
 }
 /**
  * Stream.
@@ -3404,5 +3431,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .zoomOutUp {
   -webkit-animation-name: zoomOutUp;
   animation-name: zoomOutUp;
+}
+.sophisticated {
+  font-family: 'league gothic', sans;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=/css/app.css.map */
