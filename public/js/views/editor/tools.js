@@ -14,11 +14,13 @@ define(function (require) {
 
     ui: {
       filterOption: '.filters-list li',
-      itemPreview: '.editor-preview'
+      itemPreview: '.editor-preview',
+      previewText: '.editor-preview .item-text'
     },
 
     events: {
-      'click @ui.filterOption': 'applyFilter'
+      'click @ui.filterOption': 'applyFilter',
+      'focusin @ui.previewText': 'onTextFocus'
     },
 
     applyFilter: function(e) {
@@ -29,7 +31,14 @@ define(function (require) {
       $el.addClass('filter-selected');
 
       this.ui.itemPreview.attr('data-filter',filter);
+    },
 
+    onTextFocus: function() {
+      // console.log('focus');
+      // console.log(this.ui.previewText.text().toLowerCase());
+      // if ( this.ui.previewText.text().toLowerCase() === 'text here') {
+      //   this.ui.previewText.text('');
+      // }
     }
 
   });

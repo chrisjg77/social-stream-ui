@@ -288,13 +288,29 @@ button {
 /**
  * Header.
  **********************************************************/
+.header-background {
+  height: 4.6em;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  overflow: hidden;
+}
+.header-background-inner {
+  width: 105%;
+  height: 105%;
+  background: url('../img/van-persie-flying-blurred.jpg') no-repeat center top;
+  background-size: 120% auto;
+  -webkit-filter: brightness(0.5);
+  -moz-filter: brightness(0.5);
+  filter: brightness(0.5);
+}
 .app-header {
+  position: relative;
   height: 4.5em;
-  background: #1b1b1b;
   top: 0;
   width: 100%;
   z-index: 999;
-  border-bottom: 1px solid #818181;
 }
 .app-title {
   float: left;
@@ -302,6 +318,8 @@ button {
   color: #fff;
   font-size: 1.5em;
   margin: 0;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 .header-nav {
   float: right;
@@ -314,7 +332,7 @@ button {
   padding: 1.7em 1em 1.8em;
 }
 .header-nav button {
-  margin-left: 1em;
+  margin-left: 0.5em;
 }
 /**
  * Featured Post.
@@ -323,36 +341,19 @@ button {
   max-height: 700px;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid #818181;
 }
 .featured img {
-  width: 100%;
+  width: 105%;
   margin-top: -15%;
 }
 /**
  * App Actions Toolbar.
  **********************************************************/
-.actions-background {
-  height: 5em;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  overflow: hidden;
-  border-top: 1px solid #424242;
-  border-bottom: 1px solid #424242;
-}
-.actions-background-inner {
-  width: 105%;
-  height: 105%;
-  background: url('../img/van-persie-flying-blurred.jpg') no-repeat center bottom;
-  background-size: 100% auto;
-  -webkit-filter: brightness(0.3);
-  -moz-filter: brightness(0.3);
-  filter: brightness(0.3);
-}
 .actions {
   width: 100%;
   min-height: 5em;
-  margin-top: -4.95em;
+  margin-top: 1em;
 }
 .toolbar {
   padding-top: 0.9em;
@@ -411,6 +412,7 @@ button {
   overflow: hidden;
 }
 .editing .editor {
+  margin-top: 4em;
   height: 650px;
 }
 .editing .stream-item {
@@ -424,11 +426,10 @@ button {
   height: 0;
   position: relative;
   color: #b4b4b4;
-  margin-top: 4em;
-  -webkit-transition: height 0.375s;
-  -moz-transition: height 0.375s;
-  -ms-transition: height 0.375s;
-  -o-transition: height 0.375s;
+  -webkit-transition: all 0.375s;
+  -moz-transition: all 0.375s;
+  -ms-transition: all 0.375s;
+  -o-transition: all 0.375s;
 }
 .editor > div {
   width: 100%;
@@ -438,7 +439,7 @@ button {
   text-align: center;
   width: 100%;
   height: 100%;
-  padding-top: 6em;
+  padding: 6em;
   border: 3px dashed #1b1b1b;
   -webkit-transition: border 0.275s;
   -moz-transition: border 0.275s;
@@ -463,6 +464,20 @@ button {
   -moz-transition: all 1s;
   -ms-transition: all 1s;
   -o-transition: all 1s;
+}
+.editor-preview .item-text ::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+.editor-preview .item-text :-moz-placeholder {
+  /* Firefox 18- */
+  color: rgba(255, 255, 255, 0.2);
+}
+.editor-preview .item-text ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgba(255, 255, 255, 0.2);
+}
+.editor-preview .item-text :-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.2);
 }
 .tools-filters {
   width: 100%;
