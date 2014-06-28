@@ -33,6 +33,8 @@ define(function (require) {
 
     initialize: function (options) {
       this.step = 1;
+
+      this.listenTo(app,'add:item',this.triggerEditor);
     },
 
     onDomRefresh: function() {
@@ -44,10 +46,8 @@ define(function (require) {
         app.trigger('editor:open');
       });
 
-
       this.step = 2;
       this.changeToolbar();
-      // this.$el.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', self.changeToolbar);
     },
 
     cancelItem: function() {
@@ -64,6 +64,10 @@ define(function (require) {
       setTimeout(function() {
         self.render();
       },475);
+    },
+
+    onDestroy: function() {
+      // $(window).off('scroll', this.stickyActionsBar);
     }
 
 

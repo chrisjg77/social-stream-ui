@@ -25,6 +25,41 @@
   }
 }
 
+/**
+ * Header.
+ **********************************************************/
+.app-header {
+  // position: absolute;
+  height: 4.5em;
+  background: @auto;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  border-bottom: 1px solid @auto_medium;
+}
+
+.app-title {
+  float: left;
+  padding: 1em 0;
+  color: #fff;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.header-nav {
+  float: right;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 400;
+    color: #fff;
+    padding: 1.7em 1em 1.8em;
+  }
+  button {
+    margin-left: 1em;
+  }
+}
 
 /**
  * Featured Post.
@@ -64,6 +99,7 @@
   min-height: 5em;
   margin-top: -4.95em;
 }
+
 .toolbar {
   padding-top: 0.9em;
 }
@@ -275,7 +311,7 @@
  **********************************************************/
 .stream {
   position: relative;
-  padding-top: 4em;
+  padding-top: 2em;
 }
 .stream-item {
   background: #fff;
@@ -320,6 +356,7 @@
   border: 1px solid #fff;
   cursor: pointer;
   padding: 0.5em 1.5em;
+  overflow: hidden;
   .box-shadow(none);
   .border-radius(25px);
   .transition(all 0.275s);
@@ -339,4 +376,16 @@
 .btn-emphasis:focus,
 .btn-emphasis:active {
   background: @accent;
+}
+
+.ion {
+  font-size: 0.83em;
+  position: relative;
+  top: -0.075em;
+  margin-right: 0.5em;
+}
+
+.ion-big {
+  font-size: 1em;
+  margin: 0;
 }

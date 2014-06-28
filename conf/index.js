@@ -7,6 +7,7 @@ var conf = {
     {'path':'/css/app.css'}
   ],
   scripts: [
+    {'path':'//use.typekit.net/mih2qyq.js'},
     {'path':'vendor/require.js'},
     {'path':'js/config.js'}
   ]
