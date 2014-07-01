@@ -1,6 +1,6 @@
 var conf = {
   site: {
-    title: 'Social Stream',
+    title: 'Stream',
     description: 'Description...'
   },
   styles: [

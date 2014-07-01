@@ -25,6 +25,11 @@
   }
 }
 
+.wrapper-modal {
+  margin: 0 auto;
+  width: 480px;
+}
+
 /**
  * Header.
  **********************************************************/
@@ -66,6 +71,9 @@
   float: right;
 
   a {
+    text-decoration: none;
+  }
+  a.link {
     display: inline-block;
     text-decoration: none;
     font-weight: 400;
@@ -406,4 +414,25 @@
 .ion-big {
   font-size: 1em;
   margin: 0;
+}
+
+/**
+ * Overlay.
+ **********************************************************/
+
+.overlay {
+  background: @auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+/**
+ * Login.
+ **********************************************************/
+.login {
+  margin-top: 25%;
 }

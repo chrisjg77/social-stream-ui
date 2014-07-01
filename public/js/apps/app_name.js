@@ -2,9 +2,7 @@ define(function (require) {
   var app = require('app')
     , Marionette = require('marionette')
     , HeaderView = require('views/header')
-    , ActionsView = require('views/actions')
     , EditorView = require('views/editor')
-    , StreamView = require('views/stream')
     , MyController = require('controllers/controller')
     , MyRouter
     ;
@@ -12,20 +10,40 @@ define(function (require) {
   // App-level plugins.
   require('plugins/handlebars');
 
+  // Handle links.
+  // @todo - move to plugin.
+  $(document).on('click','a',function(e) {
+    app.router.navigate($(this).attr('href'),true)
+    e.preventDefault();
+  });
+
   // Add app-level regions.
   app.addRegions({
     header: '[data-region=app-header]',
-    actions: '[data-region=app-actions]',
     editor: '[data-region=app-editor]',
-    stream: '[data-region=app-stream]'
+    page: '[data-region=app-page]',
+    overlay: '[data-region=app-overlay]'
   });
 
   // Show views in regions.
   app.header.show(new HeaderView());
-  app.actions.show(new ActionsView());
   app.editor.show(new EditorView());
-  app.stream.show(new StreamView());
 
+  // Set up routes
+  MyRouter = Marionette.AppRouter.extend({
+    appRoutes: {
+      '' : 'showHome',
+      'login': 'showLogin',
+      'user': 'showUserPage',
+      '/user/stream': 'showStreamPage'
+    }
+  });
+
+  app.router = new MyRouter({
+    controller: MyController
+  });
+
+  Backbone.history.start({pushState: true});
 
   // Return modified app.
   return app;

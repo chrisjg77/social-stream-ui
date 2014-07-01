@@ -13,7 +13,7 @@ define(function (require) {
     templateHelpers: function() {
       return {
         conf: conf,
-        step: this.step
+        action: this.action
       }
     },
 
@@ -32,8 +32,7 @@ define(function (require) {
     },
 
     initialize: function (options) {
-      this.step = 1;
-
+      this.action = 'default';
       this.listenTo(app,'add:item',this.triggerEditor);
     },
 
@@ -46,13 +45,13 @@ define(function (require) {
         app.trigger('editor:open');
       });
 
-      this.step = 2;
+      this.action = 'editor';
       this.changeToolbar();
     },
 
     cancelItem: function() {
       app.trigger('editor:close');
-      this.step = 1;
+      this.action = 'default';
 
       this.changeToolbar();
     },

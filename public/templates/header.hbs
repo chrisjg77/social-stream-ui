@@ -1,10 +1,33 @@
-<div class="wrapper-section">
-  <h1 class="app-title">Social Stream</h1>
-  <nav class="header-nav">
-    <a href="#">Discover</a>
-    <a href="#">News</a>
-    <a href="#">About</a>
-    <button class="btn round" id="add-item">Log In</button>
-    <button class="btn round btn-emphasis" id="add-item">Do Something</button>
+{{#is action 'default'}}
+    <div class="break-left animated bounceInLeft">
+      <a href="#"><h1 class="app-title">{{{conf.site.title}}}</h1></a>
+    </div>
+    <div class="break-right animated bounceInRight">
+      <nav class="header-nav">
+        <a class="link" href="#">Discover</a>
+        <a class="link" href="#">News</a>
+        <a class="link" href="#">About</a>
+        <a href="/login" class="btn round">Log In</a>
+        <button class="btn round btn-emphasis" id="add-item">Do Something</button>
+      </div>
+    </div>
+{{/is}}
+
+{{#is action 'editor'}}
+  <div class="toolbar toolbar-editor">
+    <div class="break-left animated bounceInLeft">
+      <ul class="toolbar-list list-progress">
+        <li><a class="complete" href="#"><span class="step-number">1</span> Upload</a></li>
+        <li><a href="#"><span class="step-number">2</span> Edit</a></li>
+        <li><a href="#"><span class="step-number">3</span> Publish</a></li>
+      </ul>
+      <div class="progress-meter"></div>
+    </div>
+    <div class="break-right animated bounceInRight">
+      <div class="actions-user">
+        <button class="btn round" id="cancel-item">Cancel</button>
+        {{!-- <button class="btn round btn-emphasis" id="publish-item">Publish</button> --}}
+      </div>
+    </div>
   </div>
-</div>
+{{/is}}

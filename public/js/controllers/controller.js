@@ -1,17 +1,23 @@
 define(function (require) {
   var app = require('app')
     , Marionette = require('marionette')
+    , StreamView = require('views/stream')
+    , LoginView = require('views/login')
     ;
 
   var MyController = Marionette.Controller.extend({
-    initialize: function(options) {
-      // ...
+    showHome: function() {
+      app.page.show(new StreamView());
+      app.overlay.reset();
     },
-    showLanding: function() {
-      console.log('landing');
+    showLogin: function() {
+      app.overlay.show(new LoginView());
     },
-    showAbout: function() {
-      console.log('about');
+    showUserPage: function() {
+      console.log('user page');
+    },
+    showStreamPage: function() {
+      console.log('stream page');
     }
   });
 

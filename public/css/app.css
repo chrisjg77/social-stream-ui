@@ -180,6 +180,9 @@ body {
   min-height: 5000px;
   font-family: 'Effra', 'Helvetica', sans-serif;
 }
+a {
+  text-decoration: none;
+}
 p {
   line-height: 1.5;
 }
@@ -285,6 +288,10 @@ button {
     width: 1550px;
   }
 }
+.wrapper-modal {
+  margin: 0 auto;
+  width: 480px;
+}
 /**
  * Header.
  **********************************************************/
@@ -325,6 +332,9 @@ button {
   float: right;
 }
 .header-nav a {
+  text-decoration: none;
+}
+.header-nav a.link {
   display: inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -1264,6 +1274,24 @@ button {
 .ion-big {
   font-size: 1em;
   margin: 0;
+}
+/**
+ * Overlay.
+ **********************************************************/
+.overlay {
+  background: #1b1b1b;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+/**
+ * Login.
+ **********************************************************/
+.login {
+  margin-top: 25%;
 }
 @charset "UTF-8";
 /*!
