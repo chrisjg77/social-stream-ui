@@ -3,6 +3,7 @@ define(function (require) {
     , Marionette = require('marionette')
     , StreamView = require('views/stream')
     , LoginView = require('views/login')
+    , ProfileView = require('views/profile')
     ;
 
   var MyController = Marionette.Controller.extend({
@@ -13,8 +14,8 @@ define(function (require) {
     showLogin: function() {
       app.overlay.show(new LoginView());
     },
-    showUserPage: function() {
-      console.log('user page');
+    showProfilePage: function() {
+      app.page.show(new ProfileView());
     },
     showStreamPage: function() {
       console.log('stream page');

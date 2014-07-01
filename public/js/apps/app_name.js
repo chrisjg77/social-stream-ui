@@ -34,8 +34,8 @@ define(function (require) {
     appRoutes: {
       '' : 'showHome',
       'login': 'showLogin',
-      'user': 'showUserPage',
-      '/user/stream': 'showStreamPage'
+      'profile': 'showProfilePage',
+      'profile/stream': 'showStreamPage'
     }
   });
 

@@ -6,7 +6,7 @@ define(function (require) {
     ;
 
   var LoginView = Marionette.ItemView.extend({
-    className: 'overlay',
+    className: 'overlay animated fadeIn',
     template: require('hbs!login'),
 
     // Load configuration file.
@@ -14,7 +14,8 @@ define(function (require) {
 
     ui: {
       cancel: '#cancel-login',
-      left: '.break-left'
+      left: '.break-left',
+      right: '.break-right'
     },
 
     events: {
@@ -28,11 +29,16 @@ define(function (require) {
     },
 
     onClickCancel: function() {
-      this.destroy();
+      var self = this;
+      this.$el.addClass('animated fadeOut');
+      this.ui.left.addClass('animated bounceOutLeft');
+      this.ui.right.addClass('animated bounceOutRight');
+      setTimeout(function() {
+        self.destroy();
+      },375);
     },
 
     onBeforeDestroy: function() {
-      this.ui.left.addClass('animated bounceOutLeft');
       // app.router.navigate('/',true);
       window.history.back();
     }

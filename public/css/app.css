@@ -345,19 +345,6 @@ button {
   margin-left: 0.5em;
 }
 /**
- * Featured Post.
- **********************************************************/
-.featured {
-  max-height: 700px;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid #818181;
-}
-.featured img {
-  width: 105%;
-  margin-top: -15%;
-}
-/**
  * App Actions Toolbar.
  **********************************************************/
 .actions {
@@ -421,12 +408,28 @@ button {
 .editing {
   overflow: hidden;
 }
+.editing .profile {
+  opacity: 0.3;
+  -webkit-transform: scale(0.85);
+  -moz-transform: scale(0.85);
+  -ms-transform: scale(0.85);
+  -o-transform: scale(0.85);
+  -webkit-transition: all 0.175s;
+  -moz-transition: all 0.175s;
+  -ms-transition: all 0.175s;
+  -o-transition: all 0.175s;
+}
 .editing .editor {
   margin-top: 4em;
+  margin-bottom: 2em;
   height: 650px;
 }
-.editing .stream-item {
+.editing .stream {
   opacity: 0.3;
+  -webkit-transform: scale(0.85);
+  -moz-transform: scale(0.85);
+  -ms-transform: scale(0.85);
+  -o-transform: scale(0.85);
 }
 /**
  * Editor.
@@ -581,6 +584,10 @@ button {
 .stream {
   position: relative;
   padding-top: 2em;
+  -webkit-transition: all 0.375s;
+  -moz-transition: all 0.375s;
+  -ms-transition: all 0.375s;
+  -o-transition: all 0.375s;
 }
 .stream-item {
   background: #fff;
@@ -592,10 +599,6 @@ button {
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
-  -webkit-transition: all 0.375s;
-  -moz-transition: all 0.375s;
-  -ms-transition: all 0.375s;
-  -o-transition: all 0.375s;
 }
 .stream-item img {
   width: auto;
@@ -615,6 +618,12 @@ button {
   z-index: 8;
   height: 4em;
   background: #373737;
+}
+.collection-item {
+  float: left;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
 }
 /**
  * Buttons.
@@ -1293,7 +1302,81 @@ button {
 .login {
   margin-top: 25%;
 }
+/**
+ * Profile.
+ **********************************************************/
+.featured {
+  height: 550px;
+  position: relative;
+  margin-top: -5em;
+  overflow: hidden;
+  -webkit-transition: all 0.275s;
+  -moz-transition: all 0.275s;
+  -ms-transition: all 0.275s;
+  -o-transition: all 0.275s;
+}
+.featured img {
+  width: 105%;
+  margin-top: -25%;
+}
+.profile {
+  -webkit-transition: all 0.375s;
+  -moz-transition: all 0.375s;
+  -ms-transition: all 0.375s;
+  -o-transition: all 0.375s;
+}
+.profile-info {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 99;
+  margin-top: -20em;
+  padding-top: 10em;
+  padding-bottom: 5em;
+  background-color: rgba(42, 42, 42, 0);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(42, 42, 42, 0)), to(#1b1b1b 55%));
+  background: -webkit-linear-gradient(top, rgba(42, 42, 42, 0), #1b1b1b 55%);
+  background: -moz-linear-gradient(top, rgba(42, 42, 42, 0), #1b1b1b 55%);
+  background: -ms-linear-gradient(top, rgba(42, 42, 42, 0), #1b1b1b 55%);
+  background: -o-linear-gradient(top, rgba(42, 42, 42, 0), #1b1b1b 55%);
+}
+.profile-image {
+  width: 12em;
+  height: 12em;
+  background: #818181;
+  margin: 0 auto 2em;
+  position: relative;
+  z-index: 99;
+  border: 3px solid #fff;
+  overflow: hidden;
+  -webkit-box-shadow: 0 -1em 4em rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 -1em 4em rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -1em 4em rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.profile-image img {
+  width: 100%;
+}
+.profile-name {
+  color: #fefefe;
+  font-size: 3em;
+  margin-bottom: 0.25em;
+}
+.profile-tagline {
+  color: #d8d8d8;
+  font-size: 1.43em;
+}
 @charset "UTF-8";
+.animated-delay {
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -ms-animation-delay: 0.5s;
+}
 /*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license

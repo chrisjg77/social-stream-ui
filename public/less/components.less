@@ -86,21 +86,6 @@
 }
 
 /**
- * Featured Post.
- **********************************************************/
-.featured {
-  max-height: 700px;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid @auto_medium;
-
-  img {
-    width: 105%;
-    margin-top: -15%;
-  }
-}
-
-/**
  * App Actions Toolbar.
  **********************************************************/
 .actions {
@@ -165,12 +150,21 @@
 .editing {
   overflow: hidden;
 
+  .featured {
+  }
+  .profile {
+    opacity: 0.3;
+    .transform(scale(0.85));
+    .transition(all 0.175s);
+  }
   .editor {
     margin-top: 4em;
+    margin-bottom: 2em;
     height: 650px;
   }
-  .stream-item {
+  .stream {
     opacity: 0.3;
+    .transform(scale(0.85));
   }
 }
 
@@ -338,6 +332,7 @@
 .stream {
   position: relative;
   padding-top: 2em;
+  .transition(all 0.375s);
 }
 .stream-item {
   background: #fff;
@@ -347,7 +342,6 @@
   margin: 5px;
   overflow: hidden;
   .box-shadow(0 0 4px rgba(0,0,0,0.25));
-  .transition(all 0.375s);
 
   img {
     width: auto;
@@ -369,6 +363,13 @@
   z-index: 8;
   height: 4em;
   background: lighten(#2a2a2a,5%);
+}
+
+.collection-item {
+  float: left;
+  overflow: hidden;
+  width: @stream_item_size/2;
+  height: @stream_item_size/2;
 }
 
 /**
@@ -419,7 +420,6 @@
 /**
  * Overlay.
  **********************************************************/
-
 .overlay {
   background: @auto;
   position: absolute;
@@ -435,4 +435,62 @@
  **********************************************************/
 .login {
   margin-top: 25%;
+}
+
+/**
+ * Profile.
+ **********************************************************/
+.featured {
+  height: 550px;
+  position: relative;
+  margin-top: -5em;
+  overflow: hidden;
+  .transition(all 0.275s);
+
+  img {
+    width: 105%;
+    margin-top: -25%;
+  }
+}
+
+.profile {
+  .transition(all 0.375s);
+}
+
+.profile-info {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 99;
+  margin-top: -20em;
+  padding-top: 10em;
+  padding-bottom: 5em;
+  .gradient(rgba(42,42,42,0.0),@auto 55%);
+}
+.profile-image {
+  width: 12em;
+  height: 12em;
+  background: @auto_medium;
+  margin: 0 auto 2em;
+  position: relative;
+  z-index: 99;
+  border: 3px solid #fff;
+  overflow: hidden;
+
+  .box-shadow(0 -1em 4em rgba(0,0,0,0.3));
+  .border-radius(50%);
+
+  img {
+    width: 100%;
+  }
+}
+.profile-name {
+  color: #fefefe;
+  font-size: 3em;
+  margin-bottom: 0.25em;
+}
+
+.profile-tagline {
+  color: darken(#fefefe,15%);
+  font-size: 1.43em;
 }

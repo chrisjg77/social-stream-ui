@@ -5,15 +5,16 @@ define(function (require) {
     , _ = require('underscore')
     ;
 
+  require('plugins/parallax');
+
   var StreamView = Marionette.ItemView.extend({
-    className: 'wrapper-section clearfix animated bounceInUp',
-    template: require('hbs!stream'),
+    className: 'profile clearfix',
+    template: require('hbs!profile'),
 
     // Load configuration file.
     templateHelpers: {'conf':conf},
 
     ui: {
-      header: 'h1'
     },
 
     events: {
@@ -21,10 +22,15 @@ define(function (require) {
     },
 
     initialize: function (options) {
-      // ...
     },
 
     onDomRefresh: function() {
+
+      // @todo - get this to work.
+      app.parallax.init();
+    },
+
+    onEdit: function() {
     }
 
   });
