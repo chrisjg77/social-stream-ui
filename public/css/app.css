@@ -550,13 +550,15 @@ button {
 }
 .item-image {
   background: #4e4e4e;
-  width: 510px;
-  height: 510px;
   overflow: hidden;
 }
 .item-image img {
-  width: 150%;
-  margin-left: -15%;
+  min-width: 100%;
+  height: 100%;
+}
+.editor-preview .item-image {
+  width: 510px;
+  height: 510px;
 }
 .item-text {
   position: absolute;
@@ -605,28 +607,21 @@ button {
 }
 .stream-item {
   background: #fff;
-  width: 300px;
-  height: 300px;
   float: left;
   margin: 5px;
-  overflow: hidden;
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
-.stream-item img {
-  width: auto;
-  min-width: 100%;
+.item-image {
   position: relative;
-  height: 100%;
-}
-.stream-item-image {
-  position: relative;
+  overflow: hidden;
   z-index: 9;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  width: 300px;
+  height: 300px;
 }
-.stream-item-image img {
-  height: 105%;
+.item-image img {
+  height: 100%;
 }
 .stream-item-meta {
   position: relative;
@@ -646,37 +641,45 @@ button {
   width: 300px;
   margin: 5px;
 }
-.stream-collection .stream-item {
-  float: none;
-  margin: 0;
-}
-.stream-collection .stream-item img {
-  margin-left: -20%;
-}
-.collection-info {
+.info {
   padding: 1.5em;
   background: #fefefe;
 }
-.collection-info h3 {
+.info h3 {
   color: #1b1b1b;
   font-size: 1.5em;
   margin-bottom: 1em;
+}
+.info a {
+  color: #1b1b1b;
+}
+.info a:hover {
+  text-decoration: underline;
+}
+.info-sm {
+  padding: 1em 1em 1.1em;
+}
+.info-sm a {
+  padding-left: 0.5em;
+}
+.info-sm em {
+  color: #b4b4b4;
 }
 .info-description {
   color: #4e4e4e;
   padding: 0 0 1.5em;
 }
-.collection-stats {
+.info-stats {
   border-top: 1px solid #d8d8d8;
 }
-.collection-stats p {
+.info-stats p {
   display: inline-block;
   color: #818181;
   padding-top: 1em;
   margin-right: 1em;
   line-height: 1.1;
 }
-.collection-stats strong {
+.info-stats strong {
   color: #4e4e4e;
 }
 /**
@@ -1373,13 +1376,13 @@ button {
   width: 105%;
   margin-top: -25%;
 }
-.profile {
+.meta {
   -webkit-transition: all 0.375s;
   -moz-transition: all 0.375s;
   -ms-transition: all 0.375s;
   -o-transition: all 0.375s;
 }
-.profile-meta {
+.meta {
   text-align: center;
   width: 100%;
   position: relative;
@@ -1393,7 +1396,10 @@ button {
   background: -ms-linear-gradient(top, rgba(42, 42, 42, 0), #1b1b1b 90%);
   background: -o-linear-gradient(top, rgba(42, 42, 42, 0), #1b1b1b 90%);
 }
-.profile-image {
+.meta-collection {
+  margin-top: -25em;
+}
+.meta-image {
   width: 12em;
   height: 12em;
   background: #818181;
@@ -1412,27 +1418,36 @@ button {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-.profile-image img {
+.meta-image img {
   width: 100%;
 }
-.profile-name {
+.image-sm {
+  width: 3.5em;
+  height: 3.5em;
+  float: left;
+  margin: -2.2em 0 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.meta-name {
   color: #fefefe;
   font-size: 3em;
   margin: 1em 0 0.25em;
 }
-.profile-tagline {
+.meta-tagline {
   color: #bebebe;
   font-size: 1.13em;
   padding: 0 0 1em 0.1em;
   margin-bottom: 1em;
 }
-.profile-tagline a {
+.meta-tagline a {
   color: #b2b2b2;
 }
-.profile-tagline a:hover {
+.meta-tagline a:hover {
   text-decoration: underline;
 }
-.profile-stats p {
+.meta-stats p {
   color: #fefefe;
   text-transform: uppercase;
   font-size: 1.13em;
@@ -1440,12 +1455,12 @@ button {
   padding: 0 1em 0 0;
   display: inline-block;
 }
-.profile-stats p em {
+.meta-stats p em {
   display: block;
   font-size: 0.73em;
   color: #bebebe;
 }
-.profile-stats a i {
+.meta-stats a i {
   color: #fefefe;
   font-size: 1.73em;
   padding: 0 0 0 1em;

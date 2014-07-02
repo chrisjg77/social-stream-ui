@@ -5,12 +5,18 @@ define(function (require) {
     , _ = require('underscore')
     ;
 
+  require('plugins/streamLayout');
+
   var StreamView = Marionette.ItemView.extend({
-    className: 'wrapper-section clearfix animated bounceInUp',
     template: require('hbs!stream'),
 
     // Load configuration file.
-    templateHelpers: {'conf':conf},
+    templateHelpers: function() {
+      return {
+        conf:conf,
+        stream: this.stream
+      }
+    },
 
     ui: {
       header: 'h1'
@@ -21,10 +27,16 @@ define(function (require) {
     },
 
     initialize: function (options) {
-      // ...
+      if (location.pathname === '/') {
+        this.stream = 'all';
+      }
+      else {
+        this.stream = 'user';
+      }
     },
 
     onDomRefresh: function() {
+      app.streamLayout.init('.stream-item');
     }
 
   });
