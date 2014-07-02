@@ -6,6 +6,7 @@ define(function (require) {
     ;
 
   require('plugins/parallax');
+  require('plugins/streamLayout');
 
   var StreamView = Marionette.ItemView.extend({
     className: 'profile clearfix',
@@ -15,10 +16,12 @@ define(function (require) {
     templateHelpers: {'conf':conf},
 
     ui: {
+      follow: '#follow-user'
     },
 
     events: {
-      // ...
+      'click @ui.follow': 'onFollowClick',
+      'click @ui.unfollow': 'onUnfollowClick'
     },
 
     initialize: function (options) {
@@ -28,9 +31,11 @@ define(function (require) {
 
       // @todo - get this to work.
       app.parallax.init();
+      app.streamLayout.init('.stream-collection');
     },
 
-    onEdit: function() {
+    onFollowClick: function() {
+      this.ui.follow.addClass('btn-emphasis').text('Following');
     }
 
   });

@@ -25,6 +25,11 @@
   }
 }
 
+.wrapper-content {
+  margin: 0 auto;
+  width: 640px;
+}
+
 .wrapper-modal {
   margin: 0 auto;
   width: 480px;
@@ -346,7 +351,7 @@
 .stream {
   position: relative;
   padding-top: 2em;
-  .transition(all 0.375s);
+  // .transition(all 0.375s);
 }
 .stream-item {
   background: #fff;
@@ -360,7 +365,8 @@
   img {
     width: auto;
     min-width: 100%;
-    height: 105%;
+    position: relative;
+    height: 100%;
   }
 }
 .stream-item-image {
@@ -387,11 +393,54 @@
 }
 
 .stream-collection {
-  .transition(all 0.275s);
+  display: block;
+  float: left;
+  width: @stream_item_size;
+  margin: 5px;
+  // .transition(all 0.275s);
+
+  .stream-item {
+    float: none;
+    margin: 0;
+
+    img {
+      margin-left: -20%;
+    }
+  }
+}
+
+.collection-info {
+  padding: 1.5em;
+  background: #fefefe;
+
+  h3 {
+    color: @auto;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+}
+
+.info-description {
+  color: @auto_dark;
+  padding: 0 0 1.5em;
 }
 
 .stream-collection:hover {
-  .transform(scale(0.7));
+  // .filter(brightness(0.5));
+}
+
+.collection-stats {
+  border-top: 1px solid darken(#fefefe,15%);
+  p {
+    display: inline-block;
+    color: @auto_medium;
+    padding-top: 1em;
+    margin-right: 1em;
+    line-height: 1.1;
+  }
+  strong {
+    color: @auto_dark;
+  }
 }
 
 /**
@@ -481,27 +530,20 @@
 }
 
 .profile-meta {
+  text-align: center;
   width: 100%;
   position: relative;
   z-index: 99;
-  margin-top: -21em;
-  padding-top: 10em;
-  padding-bottom: 5em;
-  .gradient(rgba(42,42,42,0.0),@auto 75%);
-
-  .wrapper-section {
-    padding-left: 14em;
-    position: relative;
-  }
+  margin-top: -35em;
+  padding-top: 15em;
+  .gradient(rgba(42,42,42,0.0),@auto 90%);
 }
 .profile-image {
   width: 12em;
   height: 12em;
-  float: left;
   background: @auto_medium;
   margin: 0 auto 2em;
-  position: absolute;
-  left: 0;
+  position: relative;
   z-index: 99;
   border: 3px solid #fff;
   overflow: hidden;
@@ -516,13 +558,20 @@
 .profile-name {
   color: #fefefe;
   font-size: 3em;
-  margin-bottom: 0.15em;
+  margin: 1em 0 0.25em;
 }
 .profile-tagline {
   color: darken(#fefefe,25%);
   font-size: 1.13em;
   padding: 0 0 1em 0.1em;
   margin-bottom: 1em;
+
+  a {
+    color: darken(#fefefe,30%);
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
 .profile-stats {
   p {
@@ -536,7 +585,7 @@
     em {
       display: block;
       font-size: 0.73em;
-      color: darken(#fefefe,15%);
+      color: darken(#fefefe,25%);
     }
   }
 
@@ -546,7 +595,4 @@
     padding: 0 0 0 1em;
     margin: 0;
   }
-}
-.border-bottom {
-  border-bottom: 1px solid @auto_dark;
 }

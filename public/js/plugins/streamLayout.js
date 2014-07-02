@@ -1,14 +1,16 @@
 define(function (require) {
   var app = require('app')
-    , Isotope = require('isotope')
+    , Masonry = require('masonry')
     ;
 
   // Namespace.
   app.streamLayout = {};
 
-  app.streamLayout.init = function() {
-    var iso = new Isotope( '.stream', {
-      itemSelector: '.stream-item'
+  app.streamLayout.init = function(itemSelector) {
+    var m = new Masonry( '.stream', {
+      isAnimated: false,
+      itemSelector: itemSelector,
+      isFitWidth: true
     });
   }
 

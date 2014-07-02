@@ -18,7 +18,7 @@ define(function (require) {
       app.page.show(new ProfileView());
     },
     showStreamPage: function() {
-      console.log('stream page');
+      app.page.show(new StreamView());
     }
   });
 

@@ -28,7 +28,8 @@ requirejs.config({
     'typeahead': '../vendor/typeahead.jquery',
     'parallax': '../vendor/jquery.parallax',
     'vague': '../vendor/Vague',
-    'isotope': '../vendor/isotope'
+    'isotope': '../vendor/isotope',
+    'masonry': '../vendor/masonry'
   },
 
   // Shims for non-AMD compatible libraries.
@@ -72,6 +73,9 @@ requirejs.config({
       deps: ['jquery']
     },
     'isotope': {
+      deps: ['jquery']
+    },
+    'masonry': {
       deps: ['jquery']
     }
   }
