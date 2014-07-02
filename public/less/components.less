@@ -82,6 +82,23 @@
   }
   button {
     margin-left: 0.5em;
+    margin-top: 1em;
+  }
+}
+
+.nav-large {
+  display: none;
+
+  @media screen and (min-width: @break_lg) {
+    display: block;
+  }
+}
+
+.nav-mobile {
+  display: block;
+
+  @media screen and (min-width: @break_lg) {
+    display: none;
   }
 }
 
@@ -155,7 +172,6 @@
   .profile {
     opacity: 0.3;
     .transform(scale(0.85));
-    .transition(all 0.175s);
   }
   .editor {
     margin-top: 4em;
@@ -188,7 +204,7 @@
   text-align: center;
   width: 100%;
   height: 100%;
-  padding: 6em;
+  padding: 6em 25%;
   border: 3px dashed @auto;
 
   .transition(border 0.275s);
@@ -227,9 +243,7 @@
        color: rgba(255,255,255,0.2);
     }
   }
-
 }
-
 
 .tools-filters {
   width: 100%;
@@ -253,7 +267,7 @@
   position: relative;
 
   img {
-    width: 130%;
+    width: 150%;
     margin-left: -15%;
   }
 
@@ -281,7 +295,7 @@
   overflow: hidden;
 
   img {
-    width: 130%;
+    width: 150%;
     margin-left: -15%;
   }
 }
@@ -372,6 +386,14 @@
   height: @stream_item_size/2;
 }
 
+.stream-collection {
+  .transition(all 0.275s);
+}
+
+.stream-collection:hover {
+  .transform(scale(0.7));
+}
+
 /**
  * Buttons.
  **********************************************************/
@@ -441,10 +463,11 @@
  * Profile.
  **********************************************************/
 .featured {
-  height: 550px;
+  height: 650px;
   position: relative;
   margin-top: -5em;
   overflow: hidden;
+  // border-bottom: 1px solid @auto_light;
   .transition(all 0.275s);
 
   img {
@@ -457,22 +480,28 @@
   .transition(all 0.375s);
 }
 
-.profile-info {
-  text-align: center;
+.profile-meta {
   width: 100%;
   position: relative;
   z-index: 99;
-  margin-top: -20em;
+  margin-top: -21em;
   padding-top: 10em;
   padding-bottom: 5em;
-  .gradient(rgba(42,42,42,0.0),@auto 55%);
+  .gradient(rgba(42,42,42,0.0),@auto 75%);
+
+  .wrapper-section {
+    padding-left: 14em;
+    position: relative;
+  }
 }
 .profile-image {
   width: 12em;
   height: 12em;
+  float: left;
   background: @auto_medium;
   margin: 0 auto 2em;
-  position: relative;
+  position: absolute;
+  left: 0;
   z-index: 99;
   border: 3px solid #fff;
   overflow: hidden;
@@ -487,10 +516,37 @@
 .profile-name {
   color: #fefefe;
   font-size: 3em;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.15em;
 }
-
 .profile-tagline {
-  color: darken(#fefefe,15%);
-  font-size: 1.43em;
+  color: darken(#fefefe,25%);
+  font-size: 1.13em;
+  padding: 0 0 1em 0.1em;
+  margin-bottom: 1em;
+}
+.profile-stats {
+  p {
+    color: #fefefe;
+    text-transform: uppercase;
+    font-size: 1.13em;
+    position: relative;
+    padding: 0 1em 0 0;
+    display: inline-block;
+
+    em {
+      display: block;
+      font-size: 0.73em;
+      color: darken(#fefefe,15%);
+    }
+  }
+
+  a i {
+    color: #fefefe;
+    font-size: 1.73em;
+    padding: 0 0 0 1em;
+    margin: 0;
+  }
+}
+.border-bottom {
+  border-bottom: 1px solid @auto_dark;
 }
