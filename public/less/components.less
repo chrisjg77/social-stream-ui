@@ -26,20 +26,26 @@
 }
 .wrapper-content {
   margin: 0 auto;
-  width: 640px;
+  width: 90%;
+
+  @media screen and (min-width: @break_md) {
+    width: 640px;
+  }
 }
 .wrapper-modal {
   margin: 0 auto;
-  width: 480px;
+  width: 320px;
 }
 .table {
   display: table;
-  width: 100%;
 }
 
 .table-cell {
   display: table-cell;
   vertical-align: top;
+}
+.cell-middle {
+  vertical-align: middle;
 }
 
 /**
@@ -177,6 +183,7 @@
 
   .featured {
   }
+  .stream-view,
   .profile {
     opacity: 0.3;
     .transform(scale(0.85));
@@ -490,7 +497,7 @@
 }
 .meta-tagline {
   color: darken(#fefefe,25%);
-  font-size: 1.13em;
+  font-size: 1.43em;
   padding: 0 0 1em 0.1em;
   margin-bottom: 1em;
 
@@ -529,16 +536,17 @@
  * Profile.
  **********************************************************/
 .featured {
-  height: 650px;
+  height: 400px;
   position: relative;
   margin-top: -5em;
   overflow: hidden;
-  // border-bottom: 1px solid @auto_light;
+  background-size: cover;
+  background-position: center bottom;
+
   .transition(all 0.275s);
 
-  img {
-    width: 105%;
-    margin-top: -25%;
+  @media screen and (min-width: @break_md) {
+    height: 650px;
   }
 }
 
@@ -561,6 +569,9 @@
 .btn-emphasis {
   background: @accent_dark;
   border: 1px solid @accent;
+}
+.btn-submit {
+  margin-top: 3em;
 }
 
 .btn:hover,
@@ -604,6 +615,10 @@
  * Login.
  **********************************************************/
 .login {
-  margin-top: 25%;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+}
+.login-form {
 }
 

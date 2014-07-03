@@ -179,6 +179,12 @@ body {
   padding-top: 0;
   min-height: 5000px;
   font-family: 'Effra', 'Helvetica', sans-serif;
+  font-size: 14px;
+}
+@media screen and (min-width: 499px) {
+  body {
+    font-size: 18px;
+  }
 }
 a {
   text-decoration: none;
@@ -209,6 +215,44 @@ button {
 }
 .clearfix:after {
   clear: both;
+}
+input {
+  background: none;
+  border: 1px solid #fefefe;
+  display: block;
+  margin: 0 0 1em;
+  padding: 0.5em 1em;
+  width: 100%;
+  font-size: 1.4em;
+  color: #fefefe;
+  opacity: 0.4;
+  position: relative;
+  -webkit-transition: all 0.275s;
+  -moz-transition: all 0.275s;
+  -ms-transition: all 0.275s;
+  -o-transition: all 0.275s;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+input[type='submit'] {
+  opacity: 1;
+  outline: none;
+}
+input:focus {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+label {
+  font-weight: 200;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+  display: block;
+  text-align: left;
+  color: #fefefe;
 }
 /*
  * Wrappers
@@ -267,7 +311,7 @@ button {
 }
 .wrapper-section {
   margin: 0 auto;
-  width: 310px;
+  width: 300px;
 }
 @media screen and (min-width: 767px) {
   .wrapper-section {
@@ -291,19 +335,26 @@ button {
 }
 .wrapper-content {
   margin: 0 auto;
-  width: 640px;
+  width: 90%;
+}
+@media screen and (min-width: 767px) {
+  .wrapper-content {
+    width: 640px;
+  }
 }
 .wrapper-modal {
   margin: 0 auto;
-  width: 480px;
+  width: 320px;
 }
 .table {
   display: table;
-  width: 100%;
 }
 .table-cell {
   display: table-cell;
   vertical-align: top;
+}
+.cell-middle {
+  vertical-align: middle;
 }
 /**
  * Header.
@@ -438,6 +489,7 @@ button {
 .editing {
   overflow: hidden;
 }
+.editing .stream-view,
 .editing .profile {
   opacity: 0.3;
   -webkit-transform: scale(0.85);
@@ -752,7 +804,7 @@ button {
 }
 .meta-tagline {
   color: #bebebe;
-  font-size: 1.13em;
+  font-size: 1.43em;
   padding: 0 0 1em 0.1em;
   margin-bottom: 1em;
 }
@@ -785,18 +837,21 @@ button {
  * Profile.
  **********************************************************/
 .featured {
-  height: 650px;
+  height: 400px;
   position: relative;
   margin-top: -5em;
   overflow: hidden;
+  background-size: cover;
+  background-position: center bottom;
   -webkit-transition: all 0.275s;
   -moz-transition: all 0.275s;
   -ms-transition: all 0.275s;
   -o-transition: all 0.275s;
 }
-.featured img {
-  width: 105%;
-  margin-top: -25%;
+@media screen and (min-width: 767px) {
+  .featured {
+    height: 650px;
+  }
 }
 /**
  * Buttons.
@@ -827,6 +882,9 @@ button {
 .btn-emphasis {
   background: #d671d1;
   border: 1px solid #dc85d7;
+}
+.btn-submit {
+  margin-top: 3em;
 }
 .btn:hover,
 .btn:focus,
@@ -1473,7 +1531,9 @@ button {
  * Login.
  **********************************************************/
 .login {
-  margin-top: 25%;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
 }
 @charset "UTF-8";
 .animated-delay {
@@ -4359,7 +4419,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 [data-filter='sophisticated'] .item-text,
 [data-filter='sophisticated'] .item-text * {
-  font-family: 'league gothic', sans-serif;
+  font-family: 'league-gothic', sans-serif;
   text-transform: uppercase;
 }
 [data-filter='sophisticated'] .item-text::before {
@@ -4386,7 +4446,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [data-filter='trendy'] .item-text,
 [data-filter='trendy'] .item-text * {
   color: #FFF900;
-  font-family: 'league gothic', sans-serif;
+  font-family: 'league-gothic', sans-serif;
   text-transform: uppercase;
 }
 [data-filter='trendy'] .item-text::before {
@@ -4406,7 +4466,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [data-filter='vintage'] .item-text,
 [data-filter='vintage'] .item-text * {
   color: #fff;
-  font-family: 'lust script', serif;
+  font-family: 'lust-script', serif;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 [data-filter='vintage'] .item-text::before {

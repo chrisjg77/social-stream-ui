@@ -20,6 +20,10 @@ define(function (require) {
       'click @ui.drop': 'uploadFile'
     },
 
+    initialize: function() {
+
+    },
+
     onDomRefresh: function() {
 
     },

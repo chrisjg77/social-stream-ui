@@ -8,6 +8,7 @@ define(function (require) {
   require('plugins/streamLayout');
 
   var StreamView = Marionette.ItemView.extend({
+    className: 'stream-view',
     template: require('hbs!stream'),
 
     // Load configuration file.

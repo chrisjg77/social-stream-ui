@@ -13,8 +13,10 @@ define(function (require) {
   // Handle links.
   // @todo - move to plugin.
   $(document).on('click','a',function(e) {
-    app.router.navigate($(this).attr('href'),true)
-    e.preventDefault();
+    if ( !$(this).hasClass('external') ) {
+      app.router.navigate($(this).attr('href'),true)
+      e.preventDefault();
+    }
   });
 
   // Add app-level regions.
@@ -35,7 +37,8 @@ define(function (require) {
       '' : 'showHome',
       'login': 'showLogin',
       'profile': 'showProfilePage',
-      'profile/stream': 'showStreamPage'
+      'stream': 'showStreamPage',
+      'thought': 'showThoughtPage'
     }
   });
 

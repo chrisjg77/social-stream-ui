@@ -9,6 +9,11 @@ body {
   padding-top: 0;
   min-height: 5000px;
   font-family: @main_font_stack;
+  font-size: 14px;
+
+  @media screen and (min-width: @break_sm) {
+    font-size: 18px;
+  }
 }
 
 a {
@@ -44,4 +49,37 @@ button {
 
 .clearfix:after {
     clear: both;
+}
+
+input {
+  background: none;
+  border: 1px solid #fefefe;
+  display: block;
+  margin: 0 0 1em;
+  padding: 0.5em 1em;
+  width: 100%;
+  font-size: 1.4em;
+  color: #fefefe;
+  opacity: 0.4;
+  position: relative;
+  .transition(all 0.275s);
+  .box-shadow(none);
+}
+input[type='submit'] {
+  opacity: 1;
+  outline: none;
+}
+
+input:focus {
+  opacity: 1;
+  .transform(scale(1.1));
+}
+
+label {
+  font-weight: 200;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+  display: block;
+  text-align: left;
+  color: #fefefe;
 }

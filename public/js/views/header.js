@@ -21,6 +21,7 @@ define(function (require) {
 
     ui: {
       addItem: '#add-item',
+      login: '#login',
       cancelItem: '#cancel-item',
       toolbarLeft: '.break-left',
       toolbarRight: ' .break-right'
@@ -28,6 +29,7 @@ define(function (require) {
 
     events: {
       'click @ui.addItem': 'triggerEditor',
+      'click @ui.login': 'triggerEditor',
       'click @ui.cancelItem': 'cancelItem'
     },
 
