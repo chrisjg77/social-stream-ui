@@ -9,7 +9,10 @@ define(function (require) {
 
   var MyController = Marionette.Controller.extend({
     showHome: function() {
-      app.page.show(new StreamView());
+      if (!(app.page.currentView instanceof StreamView)) {
+        app.page.show(new StreamView());
+      }
+      $('body').removeClass('overlayed');
       app.overlay.reset();
     },
     showLogin: function() {
@@ -19,10 +22,13 @@ define(function (require) {
       app.page.show(new ProfileView());
     },
     showStreamPage: function() {
-      app.page.show(new StreamView());
+      if (app.page.currentView != StreamView) {
+        app.page.show(new StreamView());
+      }
     },
     showThoughtPage: function() {
-      app.page.show(new ThoughtView());
+      app.overlay.show(new ThoughtView());
+      $('body').addClass('overlayed');
     }
   });
 

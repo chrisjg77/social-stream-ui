@@ -14,7 +14,7 @@ define(function (require) {
   // @todo - move to plugin.
   $(document).on('click','a',function(e) {
     if ( !$(this).hasClass('external') ) {
-      app.router.navigate($(this).attr('href'),true)
+      app.router.navigate($(this).attr('href'),true);
       e.preventDefault();
     }
   });

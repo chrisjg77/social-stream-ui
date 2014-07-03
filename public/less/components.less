@@ -140,7 +140,7 @@
       text-decoration: none;
       padding: 0.7em 0 1.35em;
       opacity: 0.7;
-      .transition(all 1s);
+      .transition(all 0.75s);
     }
   }
 }
@@ -181,21 +181,16 @@
 .editing {
   overflow: hidden;
 
-  .featured {
-  }
+  .thought,
   .stream-view,
   .profile {
-    opacity: 0.3;
-    .transform(scale(0.85));
+    opacity: 0.2;
+    .transform(scale(0.75));
   }
   .editor {
     margin-top: 4em;
     margin-bottom: 2em;
     height: 650px;
-  }
-  .stream {
-    opacity: 0.3;
-    .transform(scale(0.85));
   }
 }
 
@@ -233,12 +228,15 @@
   color: #fff;
   font-weight: 600;
 }
+.editor-tools {
+  padding: 2em;
+}
 .editor-preview {
   position: relative;
   border: 4px solid @auto_dark;
 
   * {
-    .transition(all 1s);
+    .transition(all 0.75s);
   }
 
   .item-text {
@@ -305,12 +303,15 @@
     height: 100%;
   }
 }
+
+// @todo - remove this and use .image-large
 .editor-preview {
   .item-image {
     width: @stream_item_size*1.7;
     height: @stream_item_size*1.7;
   }
 }
+
 .item-text {
   position: absolute;
   top: 0;
@@ -347,7 +348,7 @@
 .stream {
   position: relative;
   padding-top: 2em;
-  // .transition(all 0.375s);
+  .transition(all 0.75s);
 }
 .stream-item {
   background: #fff;
@@ -367,6 +368,11 @@
     height: 100%;
   }
 }
+.image-large {
+  width: @stream_item_size*2;
+  height: @stream_item_size*2;
+}
+
 .collection-item {
   float: left;
   overflow: hidden;
@@ -543,11 +549,32 @@
   background-size: cover;
   background-position: center bottom;
 
-  .transition(all 0.275s);
+  .transition(all 0.75s);
 
   @media screen and (min-width: @break_md) {
     height: 650px;
   }
+}
+
+/**
+ * Thought Page.
+ **********************************************************/
+.thought {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  .transform(translate3d(-50%,-50%,0));
+}
+
+.thought-item {
+  padding: 1em;
+}
+
+.thought-item-image {
+
+  // width: @stream_item_size*2;
+  // height: @stream_item_size*2;
+  // background: #333;
 }
 
 /**
@@ -602,13 +629,23 @@
  * Overlay.
  **********************************************************/
 .overlay {
-  background: @auto;
+  background: rgba(0,0,0,0.5);
   position: absolute;
+  overflow-y: auto;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 9999;
+  z-index: 998;
+}
+
+.overlayed {
+  overflow: hidden;
+
+  .featured,
+  .stream {
+    .filter(blur(15px));
+  }
 }
 
 /**

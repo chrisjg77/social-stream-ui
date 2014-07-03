@@ -237,6 +237,7 @@ input {
 }
 input[type='submit'] {
   opacity: 1;
+  padding: 1em;
   outline: none;
 }
 input:focus {
@@ -447,10 +448,10 @@ label {
   text-decoration: none;
   padding: 0.7em 0 1.35em;
   opacity: 0.7;
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
+  -webkit-transition: all 0.75s;
+  -moz-transition: all 0.75s;
+  -ms-transition: all 0.75s;
+  -o-transition: all 0.75s;
 }
 .list-nav a.active,
 .list-nav a:hover {
@@ -489,25 +490,19 @@ label {
 .editing {
   overflow: hidden;
 }
+.editing .thought,
 .editing .stream-view,
 .editing .profile {
-  opacity: 0.3;
-  -webkit-transform: scale(0.85);
-  -moz-transform: scale(0.85);
-  -ms-transform: scale(0.85);
-  -o-transform: scale(0.85);
+  opacity: 0.2;
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  -ms-transform: scale(0.75);
+  -o-transform: scale(0.75);
 }
 .editing .editor {
   margin-top: 4em;
   margin-bottom: 2em;
   height: 650px;
-}
-.editing .stream {
-  opacity: 0.3;
-  -webkit-transform: scale(0.85);
-  -moz-transform: scale(0.85);
-  -ms-transform: scale(0.85);
-  -o-transform: scale(0.85);
 }
 /**
  * Editor.
@@ -546,15 +541,18 @@ label {
   color: #fff;
   font-weight: 600;
 }
+.editor-tools {
+  padding: 2em;
+}
 .editor-preview {
   position: relative;
   border: 4px solid #353535;
 }
 .editor-preview * {
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
+  -webkit-transition: all 0.75s;
+  -moz-transition: all 0.75s;
+  -ms-transition: all 0.75s;
+  -o-transition: all 0.75s;
 }
 .editor-preview .item-text ::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.2);
@@ -656,6 +654,10 @@ label {
 .stream {
   position: relative;
   padding-top: 2em;
+  -webkit-transition: all 0.75s;
+  -moz-transition: all 0.75s;
+  -ms-transition: all 0.75s;
+  -o-transition: all 0.75s;
 }
 .stream-item {
   background: #fff;
@@ -674,6 +676,10 @@ label {
 }
 .item-image img {
   height: 100%;
+}
+.image-large {
+  width: 600px;
+  height: 600px;
 }
 .collection-item {
   float: left;
@@ -843,15 +849,30 @@ label {
   overflow: hidden;
   background-size: cover;
   background-position: center bottom;
-  -webkit-transition: all 0.275s;
-  -moz-transition: all 0.275s;
-  -ms-transition: all 0.275s;
-  -o-transition: all 0.275s;
+  -webkit-transition: all 0.75s;
+  -moz-transition: all 0.75s;
+  -ms-transition: all 0.75s;
+  -o-transition: all 0.75s;
 }
 @media screen and (min-width: 767px) {
   .featured {
     height: 650px;
   }
+}
+/**
+ * Thought Page.
+ **********************************************************/
+.thought {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  -o-transform: translate3d(-50%, -50%, 0);
+}
+.thought-item {
+  padding: 1em;
 }
 /**
  * Buttons.
@@ -1519,13 +1540,23 @@ label {
  * Overlay.
  **********************************************************/
 .overlay {
-  background: #1b1b1b;
+  background: rgba(0, 0, 0, 0.5);
   position: absolute;
+  overflow-y: auto;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 9999;
+  z-index: 998;
+}
+.overlayed {
+  overflow: hidden;
+}
+.overlayed .featured,
+.overlayed .stream {
+  -webkit-filter: blur(15px);
+  -moz-filter: blur(15px);
+  filter: blur(15px);
 }
 /**
  * Login.
@@ -4466,7 +4497,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [data-filter='vintage'] .item-text,
 [data-filter='vintage'] .item-text * {
   color: #fff;
-  font-family: 'lust-script', serif;
+  font-family: 'lust', serif;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 [data-filter='vintage'] .item-text::before {
