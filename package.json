@@ -1,7 +1,6 @@
 {
-  "name": "project-name-here",
   "description": "description goes here",
-  "version": "0.0.1",
+  "version": "0.0.1-4",
   "private": true,
   "main": "server.js",
   "repository": "git-repo",
@@ -25,5 +24,13 @@
     "grunt-notify": "^0.2.20",
     "growl": "^1.7.0",
     "grunt": "^0.4.4"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "name": "stream",
+  "subdomain": "te-stream-ui"
 }

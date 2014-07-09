@@ -25,7 +25,10 @@ define(function (require) {
     },
 
     onLoginSubmit: function (e) {
-      app.trigger('editor:showUpload');
+      this.ui.submit.html('Logging In');
+      setTimeout(function() {
+        app.trigger('editor:showUpload');
+      },500);
       e.preventDefault();
     },
 

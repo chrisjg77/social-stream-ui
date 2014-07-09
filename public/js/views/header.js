@@ -24,18 +24,21 @@ define(function (require) {
       login: '#login',
       cancelItem: '#cancel-item',
       toolbarLeft: '.break-left',
-      toolbarRight: ' .break-right'
+      toolbarRight: ' .break-right',
+      addToStream: '#add-to-stream'
     },
 
     events: {
       'click @ui.addItem': 'triggerEditor',
       'click @ui.login': 'triggerEditor',
-      'click @ui.cancelItem': 'cancelItem'
+      'click @ui.cancelItem': 'cancelItem',
+      'click @ui.addToStream': 'goToStreams'
     },
 
     initialize: function (options) {
       this.action = 'default';
       this.listenTo(app,'add:item',this.triggerEditor);
+      this.listenTo(app, 'editor:showTools', this.showTools);
     },
 
     onDomRefresh: function() {
@@ -65,6 +68,10 @@ define(function (require) {
       setTimeout(function() {
         self.render();
       },475);
+    },
+
+    showTools: function() {
+      this.ui.addToStream.show();
     },
 
     onDestroy: function() {

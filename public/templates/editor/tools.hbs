@@ -1,12 +1,16 @@
 <div class="table">
 
-  <div class="editor-preview table-cell animated fadeInLeft" data-filter="sophisticated">
-    <div class="item-text">
-        <textarea placeholder="Text Here"></textarea>
+  <div class="table-cell animated fadeInLeft">
+    <div class="editor-preview" data-filter="sophisticated">
+      <div class="item-text">
+          <textarea placeholder="Text Here"></textarea>
+        </div>
+      <div class="item-image">
+        <img src="/img/ski.jpg" />
       </div>
-    <div class="item-image">
-      <img src="/img/ski.jpg" />
     </div>
+    <button class="btn btn-default">Change Image</button>
+    <button class="btn btn-default">Crop &amp; Scale</button>
   </div>
 
   <div class="tools-filters table-cell animated fadeInRight">
@@ -14,31 +18,58 @@
       <li class="filter-selected" data-filter="sophisticated">
         <div class="filter-preview">
           <img src="/img/ski.jpg" />
-          <div class="item-text"><p>A</p></div>
+          <div class="item-text"><p>Aa</p></div>
         </div>
         <p class="filter-label">Sophisticated</p>
       </li>
       <li data-filter="trendy">
         <div class="filter-preview">
           <img src="/img/ski.jpg" />
-          <div class="item-text"><p>A</p></div>
+          <div class="item-text"><p>Aa</p></div>
         </div>
         <p class="filter-label">Trendy</p>
       </li>
       <li data-filter="vintage">
         <div class="filter-preview">
           <img src="/img/ski.jpg" />
-          <div class="item-text"><p>A</p></div>
+          <div class="item-text"><p>Aa</p></div>
         </div>
         <p class="filter-label">Vintage</p>
       </li>
       <li data-filter="hi-def">
         <div class="filter-preview">
           <img src="/img/ski.jpg" />
-          <div class="item-text"><p>A</p></div>
+          <div class="item-text"><p>Aa</p></div>
         </div>
-        <p class="filter-label">Vintage</p>
+        <p class="filter-label">Filter 4</p>
+      </li>
+      <li data-filter="hi-def">
+        <div class="filter-preview">
+          <img src="/img/ski.jpg" />
+          <div class="item-text"><p>Aa</p></div>
+        </div>
+        <p class="filter-label">Filter 5</p>
+      </li>
+      <li data-filter="hi-def">
+        <div class="filter-preview">
+          <img src="/img/ski.jpg" />
+          <div class="item-text"><p>Aa</p></div>
+        </div>
+        <p class="filter-label">Filter 6</p>
       </li>
     </ul>
+    <div class="pagination clearfix">
+      <button class="btn btn-round btn-default break-left" id="previous-options">
+        <span class="ion ion-chevron-left"></span>
+      </button>
+      <ul class="pagination-bullets">
+        <li class="active-page"><li>
+        <li></li>
+        <li></li>
+      </ul>
+      <button class="btn btn-round btn-default break-right" id="next-options">
+        <span class="ion ion-chevron-right"></span>
+      </button>
+    </div>
   </div>
 </div>

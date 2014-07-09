@@ -13,14 +13,19 @@ define(function (require) {
     templateHelpers: {'conf':conf},
 
     ui: {
+      filterOptionsList: '.filters-list',
       filterOption: '.filters-list li',
       itemPreview: '.editor-preview',
-      previewText: '.editor-preview .item-text'
+      previewText: '.editor-preview .item-text',
+      nextOptions: '#next-options',
+      previousOptions: '#previous-options'
     },
 
     events: {
       'click @ui.filterOption': 'applyFilter',
-      'focusin @ui.previewText': 'onTextFocus'
+      'focusin @ui.previewText': 'onTextFocus',
+      'click @ui.nextOptions': 'showNextOptions',
+      'click @ui.previousOptions': 'showPreviousOptions'
     },
 
     applyFilter: function(e) {
@@ -34,11 +39,24 @@ define(function (require) {
     },
 
     onTextFocus: function() {
-      // console.log('focus');
-      // console.log(this.ui.previewText.text().toLowerCase());
-      // if ( this.ui.previewText.text().toLowerCase() === 'text here') {
-      //   this.ui.previewText.text('');
-      // }
+    },
+
+    showNextOptions: function() {
+      var self = this;
+
+      this.ui.filterOptionsList.removeClass('bounceInRight fadeIn').addClass('animated fadeOut');
+      setTimeout(function() {
+        self.ui.filterOptionsList.removeClass('fadeOut').addClass('bounceInRight');
+      },375);
+    },
+
+    showPreviousOptions: function() {
+      var self = this;
+
+      this.ui.filterOptionsList.removeClass('fadeIn bounceInRight').addClass('animated bounceOutRight');
+      setTimeout(function() {
+        self.ui.filterOptionsList.removeClass('bounceOutRight').addClass('fadeIn');
+      },375);
     }
 
   });
