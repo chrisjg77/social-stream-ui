@@ -2,9 +2,10 @@ define(function (require) {
   var app = require('app')
     , Marionette = require('marionette')
     , HeaderView = require('views/header')
-    , EditorView = require('views/editor')
+    , FlyoutView = require('views/flyout')
     , MyController = require('controllers/controller')
     , MyRouter
+    , $body = $('body')
     ;
 
   // App-level plugins.
@@ -24,21 +25,29 @@ define(function (require) {
     header: '[data-region=app-header]',
     editor: '[data-region=app-editor]',
     page: '[data-region=app-page]',
-    overlay: '[data-region=app-overlay]'
+    overlay: '[data-region=app-overlay]',
+    flyout: '[data-region=app-flyout]'
   });
 
   // Show views in regions.
   app.header.show(new HeaderView());
-  app.editor.show(new EditorView());
+
+  // Listen for app-wide events
+  app.on('flyout:open', function() {
+    if ($body.hasClass('mode-nav')) {
+      $body.removeClass('mode-nav');
+      app.flyout.destroy(new FlyoutView());
+    } else {
+      $('body').addClass('mode-nav');
+      app.flyout.show(new FlyoutView());
+    }
+  });
 
   // Set up routes
   MyRouter = Marionette.AppRouter.extend({
     appRoutes: {
       '' : 'showHome',
-      'login': 'showLogin',
-      'profile': 'showProfilePage',
-      'stream': 'showStreamPage',
-      'thought': 'showThoughtPage'
+      'post/:id': 'showPost'
     }
   });
 

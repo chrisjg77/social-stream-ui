@@ -6,9 +6,9 @@
 
 body {
   // background: #1b1b1b;
-  .gradient (#372036,#1E0C1D);
+  .radial-gradient (#633B61,#1E0C1D);
   padding-top: 0;
-  min-height: 5000px;
+  min-height: 1360px;
   font-family: @main_font_stack;
   font-size: 14px;
 
@@ -53,6 +53,7 @@ button {
 }
 
 input {
+  font-family: @main_font_stack;
   background: none;
   border: 1px solid #fefefe;
   display: block;
@@ -65,11 +66,22 @@ input {
   position: relative;
   .transition(all 0.275s);
   .box-shadow(none);
+
+  &:focus {
+    opacity: 1;
+    .transform(scale(1.1));
+  }
 }
 
-input:focus {
-  opacity: 1;
-  .transform(scale(1.1));
+input.transparent {
+  border: none;
+  border-bottom: 1px solid #fefefe;
+  outline: none;
+
+  &:focus {
+    opacity: 1;
+    .transform(scale(1));
+  }
 }
 
 label {

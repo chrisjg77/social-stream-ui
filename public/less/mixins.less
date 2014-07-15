@@ -101,6 +101,14 @@
   background-image: -ms-linear-gradient(left, @startColor, @endColor);
   background-image: -o-linear-gradient(left, @startColor, @endColor);
 }
+.radial-gradient (@startColor: #eee, @endColor: white) {
+  background-color: @startColor;
+  background-image: -webkit-gradient(radial, left top, right top, from(@startColor), to(@endColor));
+  background-image: -webkit-radial-gradient(left, @startColor, @endColor);
+  background-image: -moz-radial-gradient(left, @startColor, @endColor);
+  background-image: -ms-radial-gradient(left, @startColor, @endColor);
+  background-image: -o-radial-gradient(left, @startColor, @endColor);
+}
 
 .animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
   -webkit-animation: @name @duration @delay @ease;

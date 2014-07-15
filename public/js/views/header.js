@@ -3,9 +3,8 @@ define(function (require) {
     , Marionette = require('marionette')
     , conf = require('conf')
     , _ = require('underscore')
+    , $body = $('body');
     ;
-
-  require('plugins/streamLayout');
 
   var HeaderView = Marionette.ItemView.extend({
     className: 'wrapper-section clearfix',
@@ -25,57 +24,44 @@ define(function (require) {
       cancelItem: '#cancel-item',
       toolbarLeft: '.break-left',
       toolbarRight: ' .break-right',
-      addToStream: '#add-to-stream'
+      addToStream: '#add-to-stream',
+      openNav: '#open-nav'
     },
 
     events: {
       'click @ui.addItem': 'triggerEditor',
       'click @ui.login': 'triggerEditor',
       'click @ui.cancelItem': 'cancelItem',
-      'click @ui.addToStream': 'goToStreams'
+      'click @ui.addToStream': 'goToStreams',
+      'click @ui.openNav': 'openNav'
     },
 
     initialize: function (options) {
       this.action = 'default';
-      this.listenTo(app,'add:item',this.triggerEditor);
-      this.listenTo(app, 'editor:showTools', this.showTools);
     },
 
     onDomRefresh: function() {
     },
 
     triggerEditor: function() {
-      var top = this.$el.offset().top;
-      $('body,html').animate({'scrollTop':top}, 275, function() {
-        app.trigger('editor:open');
-      });
-
-      this.action = 'editor';
-      this.changeToolbar();
     },
 
     cancelItem: function() {
-      app.trigger('editor:close');
-      this.action = 'default';
 
-      this.changeToolbar();
     },
 
     changeToolbar: function() {
-      var self = this;
-      this.ui.toolbarLeft.addClass('animated bounceOutLeft');
-      this.ui.toolbarRight.addClass('animated bounceOutRight');
-      setTimeout(function() {
-        self.render();
-      },475);
+
     },
 
     showTools: function() {
-      this.ui.addToStream.show();
+    },
+
+    openNav: function() {
+      app.trigger('flyout:open');
     },
 
     onDestroy: function() {
-      // $(window).off('scroll', this.stickyActionsBar);
     }
 
   });

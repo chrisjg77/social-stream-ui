@@ -1,3 +1,4 @@
+</div> <!-- .view-page -->
 <section data-region="app-overlay"></section>
 
   <!-- Load Scripts -->
@@ -16,10 +17,12 @@
         return {{{this}}};
       });
     {{/each}}
-
     define('conf', function(require) {
       return {{{stringify conf}}};
-    })
+    });
+    define('data', function(require) {
+      return {{{stringify data}}};
+    });
     // Start the app.
     require(['apps/app_name'], function (app) {
       app.start();

@@ -1,95 +1,12 @@
-{{#is stream 'all'}}
-  <div class="stream wrapper-section clearfix animated bounceInUp">
-    <article class="stream-item item-lg">
-      <a href="/thought">
-        <img src="img/original.jpg" />
-      </a>
-    </article>
-    <article class="stream-item item-sm">
-      <img src="img/group2.jpg" />
-    </article>
-    <article class="stream-item item-sm">
-      <img src="img/group3.jpg" />
-    </article>
-    <article class="stream-item item-sm">
-      <img src="img/group4.jpg" />
-    </article>
-    <article class="stream-item item-sm">
-      <img src="img/group1.jpg" />
-    </article>
-    <article class="stream-item item-sm">
-      <img src="img/muse.jpg" />
-    </article>
-    <article class="stream-item item-sm">
-      <img src="img/22jumpstreet.jpg" />
-    </article>
-    <article class="stream-item item-sm">
-      <img src="img/1bim.jpg" />
-    </article>
-    <article class="stream-item item-sm">
-      <img src="img/dumbledore.jpg" />
-    </article>
-  </div>
-{{/is}}
-
-
-{{#is stream 'user'}}
-  <div class="featured animated animated-delay fadeIn" style="background-image: url(/img/original.jpg)"></div>
-  <div class="meta meta-collection">
-    <div class="wrapper-content clearfix">
-      <h2 class="meta-name">One Does Not Simply...</h2>
-      <h3 class="meta-tagline">Create multiple stream pages.</h3>
-    </div>
-  </div>
-  <div class="stream wrapper-section clearfix animated bounceInUp">
-    <div class="stream">
-    <article class="stream-item">
-      <a href="/thought">
-        <div class="item-image">
-          <img src="../img/original.jpg" />
-        </div>
-      </a>
-    </article>
-    <article class="stream-item">
-      <div class="item-image">
-        <img src="../img/original.jpg" />
-      </div>
-    </article>
-    <article class="stream-item">
-      <div class="item-image">
-        <img src="../img/original.jpg" />
-      </div>
-    </article>
-    <article class="stream-item">
-      <div class="item-image">
-        <img src="../img/original.jpg" />
-      </div>
-    </article>
-    <article class="stream-item">
-      <div class="item-image">
-        <img src="../img/original.jpg" />
-      </div>
-    </article>
-    <article class="stream-item">
-      <div class="item-image">
-        <img src="../img/original.jpg" />
-      </div>
-    </article>
-    <article class="stream-item">
-      <div class="item-image">
-        <img src="../img/original.jpg" />
-      </div>
-    </article>
-    <article class="stream-item">
-      <div class="item-image">
-        <img src="../img/original.jpg" />
-      </div>
-    </article>
-    <article class="stream-item">
-      <div class="item-image">
-        <img src="../img/original.jpg" />
-      </div>
-    </article>
+<div class="wrapper wrapper-section">
+  <div class="stream">
+    {{#each data.posts}}
+    <a href="/post/{{{this.id}}}">
+      <article class="stream-post post-{{{this.size}}}" data-filter="{{{this.filter}}}">
+        <img src="{{{this.image}}}" />
+        <div class="item-text"><p><span>{{this.text}}</span></p></div>
+      </article>
+    </a>
+    {{/each}}
   </div>
 </div>
-{{/is}}

@@ -5,8 +5,10 @@ var express = require('express')
   , logger = require('morgan')
   , cookieParser = require('cookie-parser')
   , bodyParser = require('body-parser')
-  , conf = require('./conf')();
   ;
+
+  conf = require('./conf')();
+  data = require('./data');
 
 // Instantiate routes.
 var routes = require('./routes/index');
